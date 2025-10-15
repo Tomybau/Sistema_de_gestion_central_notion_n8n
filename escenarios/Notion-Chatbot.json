@@ -1,0 +1,2656 @@
+{
+  "active": false,
+  "connections": {
+    "divisor": {
+      "main": [
+        [
+          {
+            "node": "Download media1",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "whatsapp_texto",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Download media",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "whatsapp_texto": {
+      "main": [
+        [
+          {
+            "node": "chat_imput",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "filtrado_datos": {
+      "main": [
+        [
+          {
+            "node": "divisor",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "trasncripcion": {
+      "main": [
+        [
+          {
+            "node": "audio_content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "audio_content": {
+      "main": [
+        [
+          {
+            "node": "chat_imput",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "describe_image": {
+      "main": [
+        [
+          {
+            "node": "image_content",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "image_content": {
+      "main": [
+        [
+          {
+            "node": "chat_imput",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "chat_imput": {
+      "main": [
+        [
+          {
+            "node": "Redis",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis": {
+      "main": [
+        [
+          {
+            "node": "primera_interaccion?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch2": {
+      "main": [
+        [
+          {
+            "node": "Call 'Determinar_formato'",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Call 'Determinar_Empresa'",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Call 'Determinar_Empresa'1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "primera_interaccion?": {
+      "main": [
+        [
+          {
+            "node": "determinar_empresa",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "redis_a_JSON",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "determinar_empresa": {
+      "main": [
+        [
+          {
+            "node": "determinar_formato",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "crear_nota": {
+      "main": [
+        [
+          {
+            "node": "eliminar",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "crear_tarea": {
+      "main": [
+        [
+          {
+            "node": "eliminar2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "crear_idea": {
+      "main": [
+        [
+          {
+            "node": "eliminar1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "faltan_datos_nota?": {
+      "main": [
+        [
+          {
+            "node": "crear_nota",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Redis7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "faltan_datos_idea?": {
+      "main": [
+        [
+          {
+            "node": "crear_idea",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Redis7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "faltan_datos_tarea?": {
+      "main": [
+        [
+          {
+            "node": "crear_tarea",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Redis7",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis7": {
+      "main": [
+        [
+          {
+            "node": "solicitar_empresa",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "determinar_formato": {
+      "main": [
+        [
+          {
+            "node": "mensaje_whatsapp?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "redis_a_JSON": {
+      "main": [
+        [
+          {
+            "node": "Switch2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "mensaje_whatsapp?": {
+      "main": [
+        [],
+        [
+          {
+            "node": "Resumir_registro",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Determinar_formato'": {
+      "main": [
+        [
+          {
+            "node": "mensaje_whatsapp?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Determinar_Empresa'": {
+      "main": [
+        [
+          {
+            "node": "Redis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch1": {
+      "main": [
+        [
+          {
+            "node": "faltan_datos_nota?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "faltan_datos_idea?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "faltan_datos_tarea?",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "analiza_faltantes",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "WhatsApp Trigger": {
+      "main": [
+        [
+          {
+            "node": "Redis2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Resumir_registro": {
+      "main": [
+        [
+          {
+            "node": "Redis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis1": {
+      "main": [
+        [
+          {
+            "node": "redis_a_JSON1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "redis_a_JSON1": {
+      "main": [
+        [
+          {
+            "node": "Switch1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download media": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request": {
+      "main": [
+        [
+          {
+            "node": "trasncripcion",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Download media1": {
+      "main": [
+        [
+          {
+            "node": "HTTP Request1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "HTTP Request1": {
+      "main": [
+        [
+          {
+            "node": "describe_image",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "eliminar1": {
+      "main": [
+        [
+          {
+            "node": "todo_correcto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "eliminar": {
+      "main": [
+        [
+          {
+            "node": "todo_correcto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "eliminar2": {
+      "main": [
+        [
+          {
+            "node": "todo_correcto",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "If": {
+      "main": [
+        [
+          {
+            "node": "filtrado_datos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis2": {
+      "main": [
+        [
+          {
+            "node": "If",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis8": {
+      "main": [
+        [
+          {
+            "node": "solicitar_fecha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "analiza_faltantes": {
+      "main": [
+        [
+          {
+            "node": "Switch",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Switch": {
+      "main": [
+        [
+          {
+            "node": "crear_evento",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Redis7",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Redis8",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Redis9",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "crear_evento": {
+      "main": [
+        [
+          {
+            "node": "eliminar3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "OpenAI Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Call 'Determinar_Empresa'1": {
+      "main": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "eliminar3": {
+      "main": [
+        [
+          {
+            "node": "Send message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis9": {
+      "main": [
+        [
+          {
+            "node": "solicitar_empresa_fecha",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Basic LLM Chain": {
+      "main": [
+        [
+          {
+            "node": "Redis3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "Basic LLM Chain",
+            "type": "ai_outputParser",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis3": {
+      "main": [
+        [
+          {
+            "node": "Redis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-06T20:29:15.834Z",
+  "id": "0VvaCW7B5SRC0mDW",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Notion-Chatbot",
+  "nodes": [
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.messege.content_type }}",
+                    "rightValue": "image",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "image"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "cc9754d7-eedf-4ce9-873c-095bfd48232d",
+                    "leftValue": "={{ $json.messege.content_type }}",
+                    "rightValue": "text",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "text"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "c4b8644f-fb40-47bf-bff6-798fe48eb9cf",
+                    "leftValue": "={{ $json.messege.content_type }}",
+                    "rightValue": "audio",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "audio"
+            }
+          ]
+        },
+        "options": {
+          "fallbackOutput": "extra",
+          "renameFallbackOutput": "other"
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.2,
+      "position": [
+        -640,
+        -320
+      ],
+      "id": "832078b3-d730-4d17-8e6b-b8d20b6fe540",
+      "name": "divisor"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "dabe6a29-f026-405c-8afd-c354ad2853cc",
+              "name": "content",
+              "value": "={{ $('filtrado_datos').item.json.messege.content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        176,
+        -304
+      ],
+      "id": "f5f5a361-a301-4f51-9aaa-d077d0c097d1",
+      "name": "whatsapp_texto"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "3d8828bc-390a-4a92-8d42-462600d32e06",
+              "name": "message.message_id",
+              "value": "={{ $json.messages[0].id }}",
+              "type": "string"
+            },
+            {
+              "id": "add4a901-dc3a-4ffb-b07f-e88e375852d2",
+              "name": "messege.chat_id",
+              "value": "={{ $json.metadata.phone_number_id }}",
+              "type": "string"
+            },
+            {
+              "id": "9940cbe6-e66b-4162-8714-7e42645fc436",
+              "name": "messege.content_type",
+              "value": "={{ $json.messages[0].type }}",
+              "type": "string"
+            },
+            {
+              "id": "6fad450c-fda0-465f-a547-3b7a981905f3",
+              "name": "messege.content",
+              "value": "={{ $json.messages[0].text.body}}",
+              "type": "string"
+            },
+            {
+              "id": "5e3dc63d-74d6-4f2f-8ba2-2dd038748bbb",
+              "name": "messege.timestamp",
+              "value": "={{ $json.messages[0].timestamp.toDateTime('s').toISO() }}",
+              "type": "string"
+            },
+            {
+              "id": "06a11b10-d2c6-45c0-82a9-c00e5fa737d0",
+              "name": "user.name",
+              "value": "={{ $json.contacts[0].profile.name }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        -864,
+        -288
+      ],
+      "id": "271d5a63-6190-474d-a38b-13b119f9ca3e",
+      "name": "filtrado_datos"
+    },
+    {
+      "parameters": {
+        "resource": "audio",
+        "operation": "transcribe",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -32,
+        -144
+      ],
+      "id": "bcd967d7-ce3b-42ec-b22f-9899b1b4596f",
+      "name": "trasncripcion",
+      "credentials": {
+        "openAiApi": {
+          "id": "fDpifv2qqDic1ocl",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2183e39a-454d-4c71-9b45-540bb28dec93",
+              "name": "content",
+              "value": "=<audio>\n{{ $json.text }}\n</audio>",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        176,
+        -144
+      ],
+      "id": "59702405-525b-4a35-9bc9-39b1f02d0e1d",
+      "name": "audio_content"
+    },
+    {
+      "parameters": {
+        "resource": "image",
+        "operation": "analyze",
+        "modelId": {
+          "__rl": true,
+          "value": "gpt-4o-mini",
+          "mode": "list",
+          "cachedResultName": "GPT-4O-MINI"
+        },
+        "text": "Describe la imagen, nunca utilices comillas para marcar datos importantes, en su lugar solo pongo en mayoscula",
+        "inputType": "base64",
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.openAi",
+      "typeVersion": 1.8,
+      "position": [
+        -32,
+        -464
+      ],
+      "id": "72a2bcbb-9fcb-4418-9660-5aa0f46a7b30",
+      "name": "describe_image",
+      "credentials": {
+        "openAiApi": {
+          "id": "fDpifv2qqDic1ocl",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "2183e39a-454d-4c71-9b45-540bb28dec93",
+              "name": "content",
+              "value": "=<image>\n{{ $json.content }}\n</image>",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        176,
+        -464
+      ],
+      "id": "3ed604a7-9828-4dc5-873d-44a59c191c69",
+      "name": "image_content"
+    },
+    {
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "id": "fa721d86-e064-40ab-a9bf-f3ea7dd0b54f",
+              "name": "content",
+              "value": "={{ $json.content }}",
+              "type": "string"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3.4,
+      "position": [
+        384,
+        -304
+      ],
+      "id": "a94cd9de-7dfe-4c33-9ee2-c3a6bcb02b22",
+      "name": "chat_imput"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "estado",
+        "key": "={{ $('filtrado_datos').item.json.messege.chat_id }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        576,
+        -304
+      ],
+      "id": "2d8f4555-7d77-4ca2-9467-568446293cb1",
+      "name": "Redis",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "8f7ed160-476a-4fd5-a7e4-83a8311178a4",
+                    "leftValue": "={{ $json.Estado }}",
+                    "rightValue": "=Consultando tipo de registro",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Falta_formato"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2c5d564a-3f27-41bd-b56e-aa6934587527",
+                    "leftValue": "={{ $json.Estado }}",
+                    "rightValue": "Falta empresa",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Falta_empresa"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "34687600-3488-4a70-9cb2-8b9f605fc8b9",
+                    "leftValue": "={{ $json.Estado }}",
+                    "rightValue": "falta_fecha",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "falta_fecha"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "02d7fe64-56fd-485c-856b-5048e47d772f",
+                    "leftValue": "={{ $json.Estado }}",
+                    "rightValue": "falta_ambos",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "Faltan_ambos"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        1200,
+        -64
+      ],
+      "id": "fe226331-0bfe-42fd-a1d5-01214e31760a",
+      "name": "Switch2"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "fda76028-597a-4dac-be48-12bb54f1e62b",
+              "leftValue": "={{ $('Redis').item.json.estado }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "empty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        768,
+        -304
+      ],
+      "id": "37da9a77-564a-4410-9193-f8528f630d8a",
+      "name": "primera_interaccion?"
+    },
+    {
+      "parameters": {
+        "content": "## Tratado datos entrada\n\n",
+        "height": 576,
+        "width": 1968,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -1456,
+        -512
+      ],
+      "typeVersion": 1,
+      "id": "364de188-9b93-4b49-b5e9-8fdc4834f8ce",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "zSm2pgcHQUO60vua",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/zSm2pgcHQUO60vua",
+          "cachedResultName": "Sub-Determinar_Empresa"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "input": "={{ $('chat_imput').item.json.content }}",
+            "chat_id": "={{ $('filtrado_datos').item.json.messege.chat_id }}"
+          },
+          "matchingColumns": [
+            "input"
+          ],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "input",
+              "displayName": "input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1024,
+        -416
+      ],
+      "id": "3f536dd1-a617-4d02-998a-7671d58d69db",
+      "name": "determinar_empresa"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "sXHiDmFQ3LXFv5si",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/sXHiDmFQ3LXFv5si",
+          "cachedResultName": "Determinar_formato"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('filtrado_datos').item.json.messege.chat_id }}",
+            "input": "={{ $('chat_imput').item.json.content }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "input",
+              "displayName": "input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1472,
+        -416
+      ],
+      "id": "482d6fa5-ab75-4369-a6e8-3da5d6956e55",
+      "name": "determinar_formato"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "27e272c9-f6ae-8040-9ef1-e15463d1e2ef",
+          "mode": "list",
+          "cachedResultName": "Notas",
+          "cachedResultUrl": "https://www.notion.so/27e272c9f6ae80409ef1e15463d1e2ef"
+        },
+        "title": "={{ $json.titulo }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Empresas/Proyectos|relation",
+              "relationValue": [
+                "="
+              ]
+            }
+          ]
+        },
+        "blockUi": {
+          "blockValues": [
+            {
+              "type": "heading_1",
+              "textContent": "={{ $json.titulo }}"
+            },
+            {
+              "textContent": "=\n{{ $json.descripcion }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        3072,
+        -720
+      ],
+      "id": "9fb4717b-9126-4000-b3ec-cf25326fd2b3",
+      "name": "crear_nota",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      },
+      "notes": "Conexión:\nDB: Notas\n"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "27d272c9-f6ae-80a8-9e6b-d6d1c3c625a4",
+          "mode": "list",
+          "cachedResultName": "Tareas",
+          "cachedResultUrl": "https://www.notion.so/27d272c9f6ae80a89e6bd6d1c3c625a4"
+        },
+        "title": "={{ $json.Agente[0].Titulo }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Prioridad|select",
+              "selectValue": "={{ $json.prioridad || \"Baja\"}}"
+            },
+            {
+              "key": "Fecha |date",
+              "date": "={{ $json.Agente[0].Fecha }}",
+              "timezone": "America/Argentina/Cordoba"
+            },
+            {
+              "key": "Responsable|people",
+              "peopleValue": [
+                "208d872b-594c-81d3-ba96-00022f5f699c"
+              ]
+            }
+          ]
+        },
+        "blockUi": {
+          "blockValues": [
+            {
+              "type": "heading_1",
+              "textContent": "={{ $json.Agente[0].Titulo }}"
+            },
+            {
+              "textContent": "=\n{{ $json.Agente[0]['Descripción'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        3072,
+        -320
+      ],
+      "id": "f69703f9-1f44-4e84-9254-3c5c7ad2b4ed",
+      "name": "crear_tarea",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "={{ $('filtrado_datos').first().json.messege.chat_id }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        3264,
+        -320
+      ],
+      "id": "bb7acbeb-b116-41ec-8ea5-39d1326eccda",
+      "name": "eliminar2",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "={{ $('filtrado_datos').first().json.messege.chat_id }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        3264,
+        -720
+      ],
+      "id": "1df64c67-8e0c-44b5-90b2-f7ddeb63227f",
+      "name": "eliminar",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "={{ $('filtrado_datos').first().json.messege.chat_id }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        3264,
+        -528
+      ],
+      "id": "8860ba33-eda3-47c9-b793-75abe54a6215",
+      "name": "eliminar1",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "279272c9-f6ae-8011-951d-db101d08b619",
+          "mode": "list",
+          "cachedResultName": "Ideas ",
+          "cachedResultUrl": "https://www.notion.so/279272c9f6ae8011951ddb101d08b619"
+        },
+        "title": "={{ $json.Agente[0].Titulo }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Empresas/Proyectos|relation",
+              "relationValue": [
+                "={{ $json.Empresa[0].id }}"
+              ]
+            }
+          ]
+        },
+        "blockUi": {
+          "blockValues": [
+            {
+              "type": "heading_1",
+              "textContent": "={{ $json.Agente[0].Titulo }}"
+            },
+            {
+              "textContent": "=\n{{ $json.Agente[0]['Descripción'] }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        3072,
+        -528
+      ],
+      "id": "67e27cfe-eea0-410a-93c1-5e868bf92425",
+      "name": "crear_idea",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1fedc65b-d471-494a-b354-909a0b4e7445",
+              "leftValue": "={{ $json.empresa }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2832,
+        -624
+      ],
+      "id": "09095451-22d8-4e56-9248-9fa32d5f1947",
+      "name": "faltan_datos_nota?"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "4ab8d7f7-72e7-45fe-a9a3-a9e3ef718819",
+              "leftValue": "={{ $json.Empresa[0].Nombre }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2832,
+        -448
+      ],
+      "id": "7e55018a-c415-4703-9e66-12306332b498",
+      "name": "faltan_datos_idea?"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "1fedc65b-d471-494a-b354-909a0b4e7445",
+              "leftValue": "={{ $json.Empresa[0].Nombre }}",
+              "rightValue": "",
+              "operator": {
+                "type": "string",
+                "operation": "notEmpty",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        2832,
+        -256
+      ],
+      "id": "a3a3a0c6-82f9-4492-828d-c0d7aaaa82f3",
+      "name": "faltan_datos_tarea?"
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ $('filtrado_datos').first().json.messege.chat_id }}",
+        "value": "={\n  \"Estado\": \"Falta empresa\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('Switch1').item.json.Entradas[0].Entrada_inicial }}\",\n      \"Entrada_registro\": \"{{ $('Switch1').item.json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('Switch1').item.json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $('Switch1').item.json.Empresa[0].id }}\",\n      \"Nombre\": \"{{ $('Switch1').item.json.Empresa[0].Nombre }}\",\n      \"Confianza_empresa\": {{ $('Switch1').item.json.Empresa[0].Confianza_empresa }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('Switch1').item.json.Registro[0].Nombre }}\",\n      \"Confianza_registro\": {{ $('Switch1').item.json.Registro[0].Confianza_registro }}\n    }\n  ],\n  \"Agente\": [\n    {\n      \"Titulo\": \"{{ $('Switch1').item.json.Agente[0].Titulo }}\",\n      \"Descripcion\": \"{{ $('Switch1').item.json.Agente[0]['Descripción']}}\",\n      \"Fecha\": \"{{ $json.Agente[0].Fecha }}\",\n      \"Departamento\": \"{{ $json.Agente[0].Departamento }}\",\n      \"Prioridad\": \"{{ $json.Agente[0].Prioridad }}\"\n    }\n  ]\n}",
+        "expire": true,
+        "ttl": 600
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        3072,
+        -128
+      ],
+      "id": "989363c3-cf56-4e7d-a00f-bf35fc436c58",
+      "name": "Redis7",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $('Redis').first().json.estado;\nlet data;\n\n// 🧹 Limpieza de caracteres problemáticos\nlet cleaned = raw\n  .replace(/\\n|\\r|\\t/g, ' ')        // elimina saltos, tabs y retornos\n  .replace(/\\\\n|\\\\r|\\\\t/g, ' ')     // elimina versiones escapadas\n  .replace(/“|”/g, '\"')             // cambia comillas curvas\n  .replace(/'/g, '\"')               // reemplaza comillas simples por dobles\n  .replace(/\\s+/g, ' ')             // compacta espacios\n  .trim();\n\ntry {\n  data = JSON.parse(cleaned);\n} catch (e) {\n  // 🧩 fallback: intenta corregir manualmente si sigue fallando\n  const fixed = cleaned.replace(/([{,]\\s*)([A-Za-z0-9_]+)(\\s*:\\s*)/g, '$1\"$2\"$3');\n  try {\n    data = JSON.parse(fixed);\n  } catch (err) {\n    data = { error: 'No se pudo parsear el JSON', detalle: err.message, texto_original: raw };\n  }\n  \n}\n\n// 🪄 Agregar el campo extra desde el nodo Webhook\ntry {\n  const Entrada_registro = $('Webhook').first().json.body.data.message.conversation;\n  data.Entrada_registro = Entrada_registro;\n} catch (e) {\n  data.Entrada_registro = null; // fallback si el campo no existe\n}\n\nreturn data;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        1024,
+        -32
+      ],
+      "id": "cf50eb50-07b4-4f99-b843-710360b19821",
+      "name": "redis_a_JSON"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "sXHiDmFQ3LXFv5si",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/sXHiDmFQ3LXFv5si",
+          "cachedResultName": "Sub-Determinar_formato"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('filtrado_datos').item.json.messege.chat_id }}",
+            "input": "={{ $('chat_imput').item.json.content }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "input",
+              "displayName": "input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1472,
+        -256
+      ],
+      "id": "8722bea9-9937-40a4-ba37-374a4d2689e6",
+      "name": "Call 'Determinar_formato'"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c6e33955-32ce-46fe-b8d1-96eb9fc755aa",
+              "leftValue": "={{ $json.resultado.confianza }}",
+              "rightValue": 0.6,
+              "operator": {
+                "type": "number",
+                "operation": "lt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        1680,
+        -336
+      ],
+      "id": "771dc388-4601-4da1-8dc5-b3e03af175aa",
+      "name": "mensaje_whatsapp?"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "zSm2pgcHQUO60vua",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/zSm2pgcHQUO60vua",
+          "cachedResultName": "Determinar_Empresa"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('filtrado_datos').item.json.messege.chat_id }}",
+            "input": "={{ $('chat_imput').item.json.content }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "input",
+              "displayName": "input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1472,
+        -80
+      ],
+      "id": "e7516612-e671-4743-bf6b-f7b5d3bfc28e",
+      "name": "Call 'Determinar_Empresa'"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.Registro[0].Nombre }}",
+                    "rightValue": "ota",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    },
+                    "id": "6d88a247-ab5d-44f1-9573-39579fa47365"
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "e46e2c02-59ec-4725-b645-8ebf7b5d6df5",
+                    "leftValue": "={{ $json.Registro[0].Nombre }}",
+                    "rightValue": "dea",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d7e5afce-8f06-41f3-959f-512f56703cec",
+                    "leftValue": "={{ $json.Registro[0].Nombre }}",
+                    "rightValue": "area",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f86e9200-6b68-4a6f-a8c3-807d71707121",
+                    "leftValue": "={{ $json.Registro[0].Nombre }}",
+                    "rightValue": "vento",
+                    "operator": {
+                      "type": "string",
+                      "operation": "contains"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              }
+            }
+          ]
+        },
+        "options": {
+          "ignoreCase": false
+        }
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        2512,
+        -288
+      ],
+      "id": "6f6fca2b-4109-4ae4-8abd-6271cb74d298",
+      "name": "Switch1"
+    },
+    {
+      "parameters": {
+        "updates": [
+          "messages"
+        ],
+        "options": {
+          "messageStatusUpdates": [
+            "read"
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.whatsAppTrigger",
+      "typeVersion": 1,
+      "position": [
+        -1424,
+        -272
+      ],
+      "id": "000951e5-08c3-41a0-900c-d262f8adebe1",
+      "name": "WhatsApp Trigger",
+      "webhookId": "ae37ca39-c7d9-4f18-9a95-d59f335542f1",
+      "credentials": {
+        "whatsAppTriggerApi": {
+          "id": "mr8DkP9gFmWMpQop",
+          "name": "WhatsApp OAuth account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "sDZn8KVP4u4amYnY",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/sDZn8KVP4u4amYnY",
+          "cachedResultName": "Sub-Resumir_registro"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('filtrado_datos').item.json.messege.chat_id }}"
+          },
+          "matchingColumns": [
+            "chat_id"
+          ],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1904,
+        -320
+      ],
+      "id": "5dd71af0-97fe-46a4-8610-22d869d608e8",
+      "name": "Resumir_registro"
+    },
+    {
+      "parameters": {
+        "operation": "get",
+        "propertyName": "data",
+        "key": "={{ $('filtrado_datos').first().json.messege.chat_id }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        2128,
+        -256
+      ],
+      "id": "872cc5b9-9c80-4151-887d-4051a126ff18",
+      "name": "Redis1",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const raw = $('Redis1').first().json.data;\nlet data;\n\n// 🧹 Limpieza de caracteres problemáticos\nlet cleaned = raw\n  .replace(/\\n|\\r|\\t/g, ' ')        // elimina saltos, tabs y retornos\n  .replace(/\\\\n|\\\\r|\\\\t/g, ' ')     // elimina versiones escapadas         / \n  .replace(/\\s+/g, ' ')             // compacta espacios\n  .trim();\n\ntry {\n  data = JSON.parse(cleaned);\n} catch (e) {\n  // 🧩 fallback: intenta corregir manualmente si sigue fallando\n  const fixed = cleaned.replace(/([{,]\\s*)([A-Za-z0-9_]+)(\\s*:\\s*)/g, '$1\"$2\"$3');\n  try {\n    data = JSON.parse(fixed);\n  } catch (err) {\n    data = { error: 'No se pudo parsear el JSON', detalle: err.message, texto_original: raw };\n  }\n  \n}\n\n// 🪄 Agregar el campo extra desde el nodo Webhook\ntry {\n  const Entrada_registro = $('Webhook').first().json.body.data.message.conversation;\n  data.Entrada_registro = Entrada_registro;\n} catch (e) {\n  data.Entrada_registro = null; // fallback si el campo no existe\n}\n\nreturn data;\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2320,
+        -256
+      ],
+      "id": "b050536d-bea7-49d3-8f17-294f8279e8f6",
+      "name": "redis_a_JSON1"
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $('WhatsApp Trigger').item.json.messages[0].audio.id }}"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -416,
+        -144
+      ],
+      "id": "be203524-d3e4-497a-9335-52f44c6eece9",
+      "name": "Download media",
+      "webhookId": "c11043a8-a0ea-46d9-a0f1-3727c93eddc5",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -208,
+        -144
+      ],
+      "id": "65e4aad7-b0a8-48cc-8906-f247af4c22fc",
+      "name": "HTTP Request",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "media",
+        "operation": "mediaUrlGet",
+        "mediaGetId": "={{ $('WhatsApp Trigger').item.json.messages[0].image.id }}"
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        -416,
+        -464
+      ],
+      "id": "6c895c61-2fa4-497e-a12d-45f163beae53",
+      "name": "Download media1",
+      "webhookId": "c11043a8-a0ea-46d9-a0f1-3727c93eddc5",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "url": "={{ $json.url }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "whatsAppApi",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [
+        -224,
+        -464
+      ],
+      "id": "db795dd7-e059-4234-80b6-57ba47f25aad",
+      "name": "HTTP Request1",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "810851532108753",
+        "recipientPhoneNumber": "+5493544641683",
+        "textBody": "=¿Me facilitarías a que empresa pertenece esta {{ $('Switch1').item.json.Registro[0].Nombre }}?",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        3264,
+        -128
+      ],
+      "id": "f0727fef-d6d9-4935-aa79-ed1668b57175",
+      "name": "solicitar_empresa",
+      "webhookId": "cfe8ca01-d40b-457d-ae0e-2cdbd406d588",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "810851532108753",
+        "recipientPhoneNumber": "+5493544641683",
+        "textBody": "=Listo! La nueva {{ $('Switch1').item.json.Registro[0].Nombre }} de {{ $('Switch1').item.json.Empresa[0].Nombre }}, \"{{ $('Switch1').item.json.Agente[0].Titulo }}\" fue creada exitosamente!\n",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        3552,
+        -480
+      ],
+      "id": "12364977-552e-4ff5-8b38-0045f3566f08",
+      "name": "todo_correcto",
+      "webhookId": "cfe8ca01-d40b-457d-ae0e-2cdbd406d588",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "95d411cc-dbb1-4f23-be4e-c94b4e9f5274",
+              "leftValue": "={{ $json.messages[0].text.body }}",
+              "rightValue": "=.",
+              "operator": {
+                "type": "string",
+                "operation": "notEquals"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -1088,
+        -272
+      ],
+      "id": "558198b4-553b-4ab3-b5f5-abcfe782ed89",
+      "name": "If"
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "ultimo_mensaje_whatsapp",
+        "value": "={{ $json.messages[0].timestamp }}",
+        "expire": true,
+        "ttl": 86390
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        -1248,
+        -272
+      ],
+      "id": "d8058f12-63a3-4fc5-8fcd-5ff274ee4988",
+      "name": "Redis2",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ $('filtrado_datos').first().json.messege.chat_id }}",
+        "value": "={\n  \"Estado\": \"falta_fecha\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('Switch1').item.json.Entradas[0].Entrada_inicial }}\",\n      \"Entrada_registro\": \"{{ $('Switch1').item.json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('Switch1').item.json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $('Switch1').item.json.Empresa[0].id }}\",\n      \"Nombre\": \"{{ $('Switch1').item.json.Empresa[0].Nombre }}\",\n      \"Confianza_empresa\": {{ $('Switch1').item.json.Empresa[0].Confianza_empresa }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('Switch1').item.json.Registro[0].Nombre }}\",\n      \"Confianza_registro\": {{ $('Switch1').item.json.Registro[0].Confianza_registro }}\n    }\n  ],\n  \"Agente\": [\n    {\n      \"Titulo\": \"{{ $('Switch1').item.json.Agente[0].Titulo }}\",\n      \"Descripcion\": \"{{ $('Switch1').item.json.Agente[0]['Descripción'] }}\",\n      \"Fecha\": \"{{ $json.Agente[0].Fecha }}\",\n      \"Departamento\": \"{{ $json.Agente[0].Departamento }}\",\n      \"Prioridad\": \"{{ $json.Agente[0].Prioridad }}\"\n    }\n  ]\n}",
+        "expire": true,
+        "ttl": 600
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        3072,
+        224
+      ],
+      "id": "aa825620-9652-4e25-9036-f82f668fa56d",
+      "name": "Redis8",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "databaseId": {
+          "__rl": true,
+          "value": "284272c9-f6ae-8094-a1b7-e7d7a5c5f275",
+          "mode": "list",
+          "cachedResultName": "Eventos",
+          "cachedResultUrl": "https://www.notion.so/284272c9f6ae8094a1b7e7d7a5c5f275"
+        },
+        "title": "={{ $('Switch1').item.json.Agente[0].Titulo }}",
+        "propertiesUi": {
+          "propertyValues": [
+            {
+              "key": "Empresas/Proyectos|relation",
+              "relationValue": [
+                "={{ $('Switch1').item.json.Empresa[0].id }}"
+              ]
+            },
+            {
+              "key": "Fecha del Evento|date",
+              "range": true,
+              "dateStart": "={{ $('Switch1').item.json.Agente[0].Fecha }}",
+              "dateEnd": "={{ $('Switch1').item.json.Agente[0].Fecha_fin ||  $('Switch1').item.json.Agente[0].Fecha }}",
+              "timezone": "America/Argentina/Cordoba"
+            }
+          ]
+        },
+        "blockUi": {
+          "blockValues": [
+            {
+              "type": "heading_1",
+              "textContent": "={{ $('Switch1').item.json.Agente[0].Titulo }}"
+            },
+            {
+              "textContent": "=\n{{ $('Switch1').item.json.Agente[0]['Descripción'] || \"\"}}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        3072,
+        48
+      ],
+      "id": "b1193d2a-4bec-45da-9952-025a2cbd1dc1",
+      "name": "crear_evento",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const empresa = $json.Empresa?.[0]?.Nombre || null;\nconst fecha = $json.Agente?.[0]?.Fecha || null;\n\nif (!empresa && !fecha) {\n  // Faltan ambos\n  return [{ json: { estado: \"falta_ambos\", mensaje: \"Falta Empresa y Fecha\" } }];\n}\n\nif (!empresa) {\n  // Falta empresa\n  return [{ json: { estado: \"falta_empresa\", mensaje: \"Falta Empresa\" } }];\n}\n\nif (!fecha) {\n  // Falta fecha\n  return [{ json: { estado: \"falta_fecha\", mensaje: \"Falta Fecha\" } }];\n}\n\n// Si no falta ninguno\nreturn [{ json: { estado: \"ok\", mensaje: \"Todo completo, continuar\" } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        2624,
+        112
+      ],
+      "id": "c26aa3ef-3950-4c69-9720-ec9e5b0b85b3",
+      "name": "analiza_faltantes"
+    },
+    {
+      "parameters": {
+        "rules": {
+          "values": [
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "leftValue": "={{ $json.estado }}",
+                    "rightValue": "ok",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals"
+                    },
+                    "id": "e9bcfabc-bc7b-4054-965c-a38ba4155756"
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "todo_correcto"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "f4d1eeaf-ba01-4b2f-ac0c-886539c13e99",
+                    "leftValue": "={{ $json.estado }}",
+                    "rightValue": "falta_empresa",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "falta_empresa"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "d93bfdf1-426c-406c-a8b0-ed71feb41958",
+                    "leftValue": "={{ $json.estado }}",
+                    "rightValue": "falta_fecha",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "falta_fecha"
+            },
+            {
+              "conditions": {
+                "options": {
+                  "caseSensitive": true,
+                  "leftValue": "",
+                  "typeValidation": "strict",
+                  "version": 2
+                },
+                "conditions": [
+                  {
+                    "id": "2b2ea8b9-a7fa-47ea-8d3e-969ad24eddea",
+                    "leftValue": "={{ $json.estado }}",
+                    "rightValue": "falta_ambos",
+                    "operator": {
+                      "type": "string",
+                      "operation": "equals",
+                      "name": "filter.operator.equals"
+                    }
+                  }
+                ],
+                "combinator": "and"
+              },
+              "renameOutput": true,
+              "outputKey": "falta_ambos"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.switch",
+      "typeVersion": 3.3,
+      "position": [
+        2832,
+        80
+      ],
+      "id": "01aaac55-838a-4dc0-b7c6-d94c127d6234",
+      "name": "Switch"
+    },
+    {
+      "parameters": {
+        "operation": "delete",
+        "key": "={{ $('filtrado_datos').first().json.messege.chat_id }}"
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        3264,
+        48
+      ],
+      "id": "204fc278-8bc6-47ae-93d2-efef63c82208",
+      "name": "eliminar3",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "promptType": "define",
+        "text": "={{ $('chat_imput').first().json.content }}",
+        "hasOutputParser": true,
+        "messages": {
+          "messageValues": [
+            {
+              "message": "=Tu unico objetivo es debolver la fecha que pase el ususario en dos respuestas\nSi el usuario no especifica un horario deja vacia esa parte.\nsI EL USUARIO NO ESPECIFICA FECHA DE FINALIZACION DEJA VACIA ES APARTE\nPara referencia la fecha actual es {{ $now }}\n\n\n\"fecha_inicio\": \"YYYY-MM-DD HH:mm\",\n\"fecha_FIN\": \"YYYY-MM-DD HH:mm\"\n"
+            }
+          ]
+        },
+        "batching": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chainLlm",
+      "typeVersion": 1.7,
+      "position": [
+        1648,
+        112
+      ],
+      "id": "8783f7de-41e1-480f-bf63-7f8629ca213e",
+      "name": "Basic LLM Chain"
+    },
+    {
+      "parameters": {
+        "model": {
+          "__rl": true,
+          "mode": "list",
+          "value": "gpt-4.1-mini"
+        },
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
+      "typeVersion": 1.2,
+      "position": [
+        1632,
+        288
+      ],
+      "id": "7db943cf-56db-4f7d-af34-0ce0e43ad18b",
+      "name": "OpenAI Chat Model",
+      "credentials": {
+        "openAiApi": {
+          "id": "fDpifv2qqDic1ocl",
+          "name": "OpenAi account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "zSm2pgcHQUO60vua",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/zSm2pgcHQUO60vua",
+          "cachedResultName": "Sub-Determinar_Empresa"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {
+            "chat_id": "={{ $('filtrado_datos').item.json.messege.chat_id }}",
+            "input": "={{ $('chat_imput').item.json.content }}"
+          },
+          "matchingColumns": [],
+          "schema": [
+            {
+              "id": "chat_id",
+              "displayName": "chat_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "input",
+              "displayName": "input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        1472,
+        112
+      ],
+      "id": "32ccea46-ffa2-4dc5-ad0c-8632ea04de7a",
+      "name": "Call 'Determinar_Empresa'1"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "810851532108753",
+        "recipientPhoneNumber": "+5493544641683",
+        "textBody": "=Listo! La nueva {{ $('Switch1').item.json.Registro[0].Nombre }} de {{ $('Switch1').item.json.Empresa[0].Nombre }}, \"{{ $('Switch1').item.json.Agente[0].Titulo }}\" fue creada exitosamente para el {{ $('Switch1').item.json.Agente[0].Fecha }}!",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        3472,
+        48
+      ],
+      "id": "2aeaf5d6-6726-4199-a270-a18d5845b1d8",
+      "name": "Send message",
+      "webhookId": "b9169c1d-58a2-4616-b2b5-462242a5858c",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "810851532108753",
+        "recipientPhoneNumber": "+5493544641683",
+        "textBody": "=¿Me facilitarías para que fecha quieres que lo registremos este evento?",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        3264,
+        224
+      ],
+      "id": "51c8675b-ce69-442e-b994-0f588caba19e",
+      "name": "solicitar_fecha",
+      "webhookId": "cfe8ca01-d40b-457d-ae0e-2cdbd406d588",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ $('filtrado_datos').first().json.messege.chat_id }}",
+        "value": "={\n  \"Estado\": \"falta_ambos\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('Switch1').item.json.Entradas[0].Entrada_inicial }}\",\n      \"Entrada_registro\": \"{{ $('Switch1').item.json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('Switch1').item.json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $('Switch1').item.json.Empresa[0].id }}\",\n      \"Nombre\": \"{{ $('Switch1').item.json.Empresa[0].Nombre }}\",\n      \"Confianza_empresa\": {{ $('Switch1').item.json.Empresa[0].Confianza_empresa }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('Switch1').item.json.Registro[0].Nombre }}\",\n      \"Confianza_registro\": {{ $('Switch1').item.json.Registro[0].Confianza_registro }}\n    }\n  ],\n  \"Agente\": [\n    {\n      \"Titulo\": \"{{ $('Switch1').item.json.Agente[0].Titulo }}\",\n      \"Descripcion\": \"{{ $('Switch1').item.json.Agente[0]['Descripción'] }}\",\n      \"Fecha\": \"{{ $json.Agente[0].Fecha }}\",\n      \"Departamento\": \"{{ $json.Agente[0].Departamento }}\",\n      \"Prioridad\": \"{{ $json.Agente[0].Prioridad }}\"\n    }\n  ]\n}",
+        "expire": true,
+        "ttl": 600
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        3072,
+        416
+      ],
+      "id": "717cc2c4-e926-4a2b-86dd-ab24dc2568af",
+      "name": "Redis9",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "810851532108753",
+        "recipientPhoneNumber": "+5493544641683",
+        "textBody": "=¿Me facilitarías para que empresa y con que fecha quieres que lo registremos este evento?",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        3264,
+        416
+      ],
+      "id": "ac44bbd4-4712-478e-a12b-0e57431d8fee",
+      "name": "solicitar_empresa_fecha",
+      "webhookId": "cfe8ca01-d40b-457d-ae0e-2cdbd406d588",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ $('filtrado_datos').item.json.messege.chat_id }}",
+        "value": "={\n  \"Estado\": \"Todo listo\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_inicial }}\",\n      \"Entrada_registro\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $('redis_a_JSON').item.json.Empresa[0].id }}\",\n      \"Nombre\": \"{{ $('redis_a_JSON').item.json.Empresa[0].Nombre }}\",\n      \"Confianza_empresa\": {{ $('redis_a_JSON').item.json.Empresa[0].Confianza_empresa }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('redis_a_JSON').item.json.Registro[0].Nombre }}\",\n      \"Confianza_registro\": {{ $('redis_a_JSON').item.json.Registro[0].Confianza_registro }}\n    }\n  ],\n  \"Agente\": [\n    {\n      \"Titulo\": \"{{ $('redis_a_JSON').item.json.Agente[0].Titulo }}\",\n      \"Descripcion\": \"{{ $('redis_a_JSON').item.json.Agente[0]['Descripción'] }}\",\n      \"Fecha\": \"{{ $json.output.inicio }}\",\n      \"Fecha_fin\": \"{{ $json.output.fin }}\",\n      \"Departamento\": \"{{ $('redis_a_JSON').item.json.Agente[0].Departamento }}\",\n      \"Prioridad\": \"{{ $('redis_a_JSON').item.json.Agente[0].Prioridad }}\"\n    }\n  ]\n}",
+        "expire": true,
+        "ttl": 600
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        1952,
+        112
+      ],
+      "id": "338f4a4b-8e12-4191-8269-a1c120a646f1",
+      "name": "Redis3",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n\t\"inicio\": \"YYYY-MM-DD HH:mm\",\n\t\"fin\": \"YYYY-MM-DD HH:mm\"\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        1808,
+        288
+      ],
+      "id": "2e33a27d-70af-4b5d-b541-7a849a98c78d",
+      "name": "Structured Output Parser"
+    }
+  ],
+  "pinData": {
+    "WhatsApp Trigger": [
+      {
+        "json": {
+          "messaging_product": "whatsapp",
+          "metadata": {
+            "display_phone_number": "5493544544036",
+            "phone_number_id": "810851532108753"
+          },
+          "contacts": [
+            {
+              "profile": {
+                "name": "Tomás Baudracco"
+              },
+              "wa_id": "5493544641683"
+            }
+          ],
+          "messages": [
+            {
+              "from": "5493544641683",
+              "id": "wamid.HBgNNTQ5MzU0NDY0MTY4MxUCABIYIEFDQzEzOEUzRDUxQThDRDI3QTk3QkE0REMyOEJBNEI5AA==",
+              "timestamp": "1760562312",
+              "text": {
+                "body": "Sería para mañana para la empresa de cafe"
+              },
+              "type": "text"
+            }
+          ],
+          "field": "messages"
+        }
+      }
+    ]
+  },
+  "repo_name": "Sistema_de_gestion_central_notion_n8n",
+  "repo_owner": "Tomybau",
+  "repo_path": "workflows/",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-06T20:29:15.834Z",
+      "updatedAt": "2025-10-06T20:29:15.834Z",
+      "role": "workflow:owner",
+      "workflowId": "0VvaCW7B5SRC0mDW",
+      "projectId": "5ieVStNAHt1Bb6Tr"
+    }
+  ],
+  "staticData": null,
+  "tags": [
+    {
+      "createdAt": "2025-10-15T23:16:12.194Z",
+      "updatedAt": "2025-10-15T23:16:12.194Z",
+      "id": "NHMeAPMIT8hmJz47",
+      "name": "Notion"
+    }
+  ],
+  "triggerCount": 1,
+  "updatedAt": "2025-10-15T23:16:16.336Z",
+  "versionId": "3c58945d-1a24-45cb-8de6-bd666126af38"
+}
