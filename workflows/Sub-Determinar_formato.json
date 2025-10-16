@@ -229,7 +229,7 @@
       "parameters": {
         "operation": "set",
         "key": "={{ $('When Executed by Another Workflow').item.json.chat_id }}",
-        "value": "={\n  \"Estado\": \"Consultando tipo de registro\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_inicial }}\",\n      \"Entrada_registro\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $('redis_a_JSON').item.json.Empresa[0].id }}\",\n      \"Nombre\": \"{{ $('redis_a_JSON').item.json.Empresa[0].Nombre }}\",\n      \"Confianza_empresa\": {{ $('redis_a_JSON').item.json.Empresa[0].Confianza_empresa }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('JSON_registro').item.json.resultado.tipo }}\",\n      \"Confianza_registro\": {{ $('JSON_registro').item.json.resultado.confianza }},\n      \"Fecha\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha }}\",\n      \"Departamento\":\"{{ $('redis_a_JSON').first().json.Agente[0].Departamento }}\",\n      \"Prioridad\":\"{{ $('redis_a_JSON').first().json.Agente[0].Prioridad }}\"\n    }\n  ]\n}\n",
+        "value": "={\n  \"Estado\": \"falta_formato\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_inicial }}\",\n      \"Entrada_registro\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $('redis_a_JSON').item.json.Empresa[0].id }}\",\n      \"Nombre\": \"{{ $('redis_a_JSON').item.json.Empresa[0].Nombre }}\",\n      \"Confianza_empresa\": {{ $('redis_a_JSON').item.json.Empresa[0].Confianza_empresa }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('JSON_registro').item.json.resultado.tipo }}\",\n      \"Confianza_registro\": {{ $('JSON_registro').item.json.resultado.confianza }},\n      \"Fecha\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha }}\",\n      \"Fecha_inicio\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha_inicio || \"\"}}\",\n      \"Fecha_fin\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha_fin || \"\"}}\",\n      \"Departamento\":\"{{ $('redis_a_JSON').first().json.Agente[0].Departamento }}\",\n      \"Prioridad\":\"{{ $('redis_a_JSON').first().json.Agente[0].Prioridad }}\"\n    }\n  ]\n}\n",
         "expire": true,
         "ttl": 600
       },
@@ -330,7 +330,7 @@
       "parameters": {
         "operation": "set",
         "key": "={{ $('When Executed by Another Workflow').item.json.chat_id }}",
-        "value": "={\n  \"Estado\": \"Consultando tipo de registro\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_inicial }}\",\n      \"Entrada_registro\": \"{{ $('When Executed by Another Workflow').item.json.input }}\",\n      \"Entrada_empresa\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $('redis_a_JSON').item.json.Empresa[0].id }}\",\n      \"Nombre\": \"{{ $('redis_a_JSON').item.json.Empresa[0].Nombre }}\",\n      \"Confianza_empresa\": {{ $('redis_a_JSON').item.json.Empresa[0].Confianza_empresa }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('JSON_registro').item.json.resultado.tipo }}\",\n      \"Confianza_registro\": {{ $('JSON_registro').item.json.resultado.confianza }},\n      \"Fecha\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha }}\",\n      \"Departamento\":\"{{ $('redis_a_JSON').first().json.Agente[0].Departamento }}\",\n      \"Prioridad\":\"{{ $('redis_a_JSON').first().json.Agente[0].Prioridad }}\"\n    }\n  ]\n}\n",
+        "value": "={\n  \"Estado\": \"formato_obtenido\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_inicial }}\",\n      \"Entrada_registro\": \"{{ $('When Executed by Another Workflow').item.json.input }}\",\n      \"Entrada_empresa\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $('redis_a_JSON').item.json.Empresa[0].id }}\",\n      \"Nombre\": \"{{ $('redis_a_JSON').item.json.Empresa[0].Nombre }}\",\n      \"Confianza_empresa\": {{ $('redis_a_JSON').item.json.Empresa[0].Confianza_empresa }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('JSON_registro').item.json.resultado.tipo }}\",\n      \"Confianza_registro\": {{ $('JSON_registro').item.json.resultado.confianza }},\n      \"Fecha\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha }}\",\n      \"Departamento\":\"{{ $('redis_a_JSON').first().json.Agente[0].Departamento }}\",\n      \"Prioridad\":\"{{ $('redis_a_JSON').first().json.Agente[0].Prioridad }}\"\n    }\n  ],\n    \"Agente\": [\n      {\n        \"Titulo\": \"{{ $('redis_a_JSON').item.json.Agente[0].Titulo }}\",\n        \"Descripción\": \"{{ $('redis_a_JSON').item.json.Agente[0]['Descripción'] }}\",\n        \"Fecha\": \"{{ $('redis_a_JSON').item.json.Agente[0].Fecha }}\",\n        \"Fecha_inicio\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha_inicio }}\",\n        \"Fecha_fin\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha_fin }}\",\n        \"Departamento\": \"{{ $('redis_a_JSON').item.json.Agente[0].Departamento }}\",\n        \"Prioridad\": \"{{ $('redis_a_JSON').item.json.Agente[0].Prioridad }}\"\n      }\n    ]\n}\n",
         "expire": true,
         "ttl": 600
       },
@@ -468,8 +468,8 @@
     "When Executed by Another Workflow": [
       {
         "json": {
-          "chat_id": "wamid.HBgNNTQ5MzU0NDY0MTY4MxUCABIYIEFDMjhCNjc1NzNBNzhDNEY2NjFBRDk0RTdCOEUxQzMxAA==",
-          "input": "<image>\nLa imagen muestra una taza blanca con un diseño que incluye el texto \"PROMO 2021\". A la derecha del texto, hay dos escudos, uno azul y otro en un diseño similar. La taza tiene un mango y se encuentra sobre un escritorio, parcialmente visible también un mouse pad con un mapa oscuro que resalta el océano Pacífico. Al fondo, se pueden ver algunos dispositivos electrónicos y cables. La iluminación del entorno sugiere un ambiente de trabajo.\n</image>",
+          "chat_id": "810851532108753",
+          "input": "Necesito que me agende una reunión con lucas",
           "wa_id": "5493544641683"
         }
       }
@@ -500,6 +500,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-10-16T00:54:49.694Z",
-  "versionId": "d94ba5c8-940f-4071-aadb-c6ac4b420786"
+  "updatedAt": "2025-10-16T14:27:50.342Z",
+  "versionId": "2a33eb62-ced0-4b84-8bf3-adbd12e0efd5"
 }
