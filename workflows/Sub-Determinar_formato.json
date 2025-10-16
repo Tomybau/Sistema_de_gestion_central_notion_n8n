@@ -281,7 +281,7 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "810851532108753",
-        "recipientPhoneNumber": "+5493544641683",
+        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').first().json.wa_id }}",
         "textBody": "Perfecto, ¿querés que lo guarde como nota, idea, tarea o evento?",
         "additionalFields": {}
       },
@@ -310,6 +310,9 @@
             },
             {
               "name": "input"
+            },
+            {
+              "name": "wa_id"
             }
           ]
         }
@@ -466,7 +469,8 @@
       {
         "json": {
           "chat_id": "wamid.HBgNNTQ5MzU0NDY0MTY4MxUCABIYIEFDMjhCNjc1NzNBNzhDNEY2NjFBRDk0RTdCOEUxQzMxAA==",
-          "input": "<image>\nLa imagen muestra una taza blanca con un diseño que incluye el texto \"PROMO 2021\". A la derecha del texto, hay dos escudos, uno azul y otro en un diseño similar. La taza tiene un mango y se encuentra sobre un escritorio, parcialmente visible también un mouse pad con un mapa oscuro que resalta el océano Pacífico. Al fondo, se pueden ver algunos dispositivos electrónicos y cables. La iluminación del entorno sugiere un ambiente de trabajo.\n</image>"
+          "input": "<image>\nLa imagen muestra una taza blanca con un diseño que incluye el texto \"PROMO 2021\". A la derecha del texto, hay dos escudos, uno azul y otro en un diseño similar. La taza tiene un mango y se encuentra sobre un escritorio, parcialmente visible también un mouse pad con un mapa oscuro que resalta el océano Pacífico. Al fondo, se pueden ver algunos dispositivos electrónicos y cables. La iluminación del entorno sugiere un ambiente de trabajo.\n</image>",
+          "wa_id": "5493544641683"
         }
       }
     ]
@@ -496,6 +500,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-10-15T23:16:41.160Z",
-  "versionId": "512b04ab-bf9a-42f1-b441-e09a31028b07"
+  "updatedAt": "2025-10-16T00:54:49.694Z",
+  "versionId": "d94ba5c8-940f-4071-aadb-c6ac4b420786"
 }
