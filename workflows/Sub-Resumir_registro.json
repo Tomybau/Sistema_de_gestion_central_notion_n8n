@@ -242,7 +242,7 @@
         "messages": {
           "messageValues": [
             {
-              "message": "=Eres un asistente que ayuda a registrar ideas.\nTu objetivo es resumir y organizar una propuesta o pensamiento del usuario.\nDebes dejar clara la esencia de la idea, su propósito y su posible aplicación.\nJamas por ninguina razon puedes inventar informacion que no se encuentre en lo que el usuario dijo\nSi el ususario da diferentes puntos o crees que la informacion es mejor acomodarla por puntos puedes colocar distintos separadores como \n1) o - .\n\nLa idea pertenece a la empresa {{ $('redis_a_JSON').item.json.Empresa[0].Nombre }}.\n\nDevuelve solo un JSON con esta estructura:\n{\n  \"titulo\": \"título claro de la idea\",\n  \"descripcion\": \"resumen del concepto central o del problema que intenta resolver\",\n}"
+              "message": "=Eres un asistente que ayuda a registrar ideas.\nTu objetivo es resumir y organizar una propuesta o pensamiento del usuario.\nDebes dejar clara la esencia de la idea, su propósito y su posible aplicación.\nJamas por ninguina razon puedes inventar informacion que no se encuentre en lo que el usuario dijo\nSi el ususario da diferentes puntos o crees que la informacion es mejor acomodarla por puntos puedes colocar distintos separadores como \n1) o - .\n\n\nDevuelve solo un JSON con esta estructura:\n{\n  \"titulo\": \"título claro de la idea\",\n  \"descripcion\": \"resumen del concepto central o del problema que intenta resolver\",\n}"
             }
           ]
         },
@@ -264,7 +264,7 @@
         "messages": {
           "messageValues": [
             {
-              "message": "=Eres un asistente que ayuda a registrar tareas de trabajo.\nEl usuario puede hablar de manera informal o explicar varias cosas, pero tú debes identificar la acción principal a realizar y acomodar el demas texto lo mas claro posible.\nJamas por ninguina razon puedes inventar informacion que no se encuentre en lo que el usuario dijo\nLa tarea pertenece a la empresa {{ $('redis_a_JSON').item.json.Empresa[0].Nombre }}\nDepartametnos disponibles: {{ $json.departamentos }}\n\nTu objetivo:\n1. Resumir la acción principal.\n2. Detectar fecha, departamento o responsable si se mencionan.\n3. Dejar los campos vacíos si no aparecen.\n\nDevuelve únicamente un JSON con esta estructura:\n{\n  \"titulo\": \"acción concreta que debe realizarse\",\n  \"descripcion\": \"detalle o contexto de la tarea\",\n  \"fecha\": \"YYYY-MM-DD o vacío\",\n  \"departamento\": \"nombre del área si se menciona, o vacío\",\n  \"prioridad\": \"baja | media | alta o vacío\"\n}\n"
+              "message": "=Eres un asistente que ayuda a registrar tareas de trabajo.\nEl usuario puede hablar de manera informal o explicar varias cosas, pero tú debes identificar la acción principal a realizar y acomodar el demas texto lo mas claro posible.\nJamas por ninguina razon puedes inventar informacion que no se encuentre en lo que el usuario dijo\nDepartametnos disponibles: {{ $json.departamentos }}\n\nTu objetivo:\n1. Resumir la acción principal.\n2. Detectar fecha, departamento o responsable si se mencionan.\n3. Dejar los campos vacíos si no aparecen.\n\nDevuelve únicamente un JSON con esta estructura:\n{\n  \"titulo\": \"acción concreta que debe realizarse\",\n  \"descripcion\": \"detalle o contexto de la tarea\",\n  \"fecha\": \"YYYY-MM-DD o vacío\",\n  \"departamento\": \"nombre del área si se menciona, o vacío\",\n  \"prioridad\": \"baja | media | alta o vacío\"\n}\n"
             }
           ]
         },
@@ -286,7 +286,7 @@
         "messages": {
           "messageValues": [
             {
-              "message": "=Eres un asistente que ayuda a registrar eventos o reuniones.\nEl usuario puede hablar de forma espontánea o incluir detalles mezclados.\nDebes identificar fecha, hora, tema del evento y empresa asociada (ya conocida: {{ $('redis_a_JSON').item.json.Empresa }}).\nFecha y hora actual para que te guies: {{ $now }}\n\nTu objetivo es dejarlo todo listo para crear el evento en Notion.\n\nDevuelve solo un JSON con esta estructura:\n{\n  \"titulo\": \"nombre o motivo del evento\",\n  \"descripcion\": \"contexto o información adicional (opcional)\",\n  \"fecha\": \"YYYY-MM-DD o vacío\",\n  \"hora_inicio\": \"HH:MM o vacío\",\n  \"hora_fin\": \"HH:MM o vacío\",\n  \"calendario\": \"Personal | Botekia | Clínica Noga | Cabañas Nacer del Sol | InternaMente | Impresiones 3D (elige el más lógico o deja vacío)\"\n}\n"
+              "message": "=Eres un asistente que ayuda a registrar eventos o reuniones.\nEl usuario puede hablar de forma espontánea o incluir detalles mezclados.\nDebes identificar fecha, hora, tema del evento.\n\n## Casos para las fechas:\n- Si no se especifica nada, deja vacio *JAMAS PUEDES INVENTAR DATOS NO DADOS POR EL USUARIO*\n- Si solo se especifica una fecha para el evento completa \"fecha\" y deja \"fecha_inicio\" y \"fecha_fin\" vacios\n- Si especifica el horario pero no la finalizacion pon en \"fecha_inicio\" la fecha con la hora y en hora fin coloca media hora mas de la fecha y hora de inicio\n- Si especifica fecha y hora de inicio y fin completa en su respectivos lugares\nFecha y hora actual para que te guies: {{ $now }}\n\n\n\nTu objetivo es dejarlo todo listo para crear el evento en Notion.\nDevuelve solo un JSON con esta estructura:\n\n{\n  \"titulo\": \"nombre o motivo del evento\",\n  \"descripcion\": \"contexto o información adicional (opcional)\",\n  \"fecha\": \"YYYY-MM-DD o vacío\",\n  \"fecha_inicio\": \"YYYY-MM-DD HH:MM o vacío\",\n  \"fecha_fin\": \"YYYY-MM-DD HH:MM o vacío\",\n}\n"
             }
           ]
         },
@@ -486,7 +486,7 @@
       "parameters": {
         "operation": "set",
         "key": "={{ $('When Executed by Another Workflow').item.json.chat_id }}",
-        "value": "={\n  \"Estado\": \"Consultando tipo de registro\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_inicial }}\",\n      \"Entrada_registro\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $('redis_a_JSON').item.json.Empresa[0].id }}\",\n      \"Nombre\": \"{{ $('redis_a_JSON').item.json.Empresa[0].Nombre }}\",\n      \"Confianza_empresa\": {{ $('redis_a_JSON').item.json.Empresa[0].Confianza_empresa }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('redis_a_JSON').item.json.Registro[0].Nombre }}\",\n      \"Confianza_registro\": {{ $('redis_a_JSON').item.json.Registro[0].Confianza_registro }}\n    }\n  ],\n  \"Agente\": [\n    {\n      \"Titulo\": \"{{ $json.titulo }}\",\n      \"Descripción\": \"{{ $json.descripcion }}\",\n      \"Fecha\": \"{{ $json.fecha }}\",\n      \"Departamento\":\"{{ $json.departamento }}\",\n      \"Prioridad\":\"{{ $json.prioridad }}\"\n    }\n  ]\n}\n",
+        "value": "={\n  \"Estado\": \"resumen_obtenido\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_inicial }}\",\n      \"Entrada_registro\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('redis_a_JSON').item.json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $('redis_a_JSON').item.json.Empresa[0].id }}\",\n      \"Nombre\": \"{{ $('redis_a_JSON').item.json.Empresa[0].Nombre }}\",\n      \"Confianza_empresa\": {{ $('redis_a_JSON').item.json.Empresa[0].Confianza_empresa }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('redis_a_JSON').item.json.Registro[0].Nombre }}\",\n      \"Confianza_registro\": {{ $('redis_a_JSON').item.json.Registro[0].Confianza_registro }}\n    }\n  ],\n  \"Agente\": [\n    {\n      \"Titulo\": \"{{ $json.titulo }}\",\n      \"Descripción\": \"{{ $json.descripcion || \"\"}}\",\n      \"Fecha\": \"{{ $json.fecha || \"\"}}\",\n      \"Fecha_inicio\": \"{{ $json.fecha || \"\"}}\",\n      \"Fecha_fin\": \"{{ $json.fecha || \"\"}}\",\n      \"Departamento\":\"{{ $json.departamento || \"\"}}\",\n      \"Prioridad\":\"{{ $json.prioridad || \"\"}}\"\n    }\n  ]\n}\n",
         "expire": true,
         "ttl": 600
       },
@@ -507,7 +507,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Tomamos la salida del nodo anterior (Redis3)\nconst rawData = $input.first().json.data;\nlet parsedData;\n\ntry {\n  // Limpieza avanzada para remover caracteres de control y escapar comillas correctamente\n  const cleaned = rawData\n    .replace(/[\\u0000-\\u001F]+/g, ' ')   // elimina cualquier carácter de control invisible\n    .replace(/\\\\\"/g, '\"')                // convierte comillas escapadas en reales\n    .replace(/\\\\n|\\\\r|\\\\t/g, ' ')        // elimina versiones escapadas de saltos, tabs, retornos\n    .replace(/\\n|\\r|\\t/g, ' ')           // elimina saltos reales\n    .replace(/\"{/g, '{')                 // elimina comillas al inicio del objeto\n    .replace(/}\"/g, '}')                 // elimina comillas al final del objeto\n    .replace(/\\s+/g, ' ')                // compacta espacios\n    .trim();\n\n  // Intentar parsear el string limpio\n  parsedData = JSON.parse(cleaned);\n\n} catch (error) {\n  parsedData = {\n    error: \"No se pudo parsear el JSON desde Redis3\",\n    detalle: error.message,\n    raw: rawData.slice(0, 500) + \"...\" // muestra solo un fragmento para debug\n  };\n}\n\n// Devolvemos el objeto final como JSON\nreturn [{ json: parsedData }];\n"
+        "jsCode": "// Tomamos la salida del nodo anterior (Redis3)\nconst rawData = $json[\"data\"];\n\n// Validamos si existe y si es un string JSON\nlet parsedData;\ntry {\n  parsedData = rawData ? JSON.parse(rawData) : {};\n} catch (error) {\n  parsedData = { error: \"No se pudo parsear el JSON desde Redis3\", raw: rawData };\n}\n\n// Devolvemos el objeto final como JSON\nreturn [{ json: parsedData }];\n\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -579,13 +579,6 @@
           "chat_id": "810851532108753"
         }
       }
-    ],
-    "Redis3": [
-      {
-        "json": {
-          "data": "{\n  \"Estado\": \"Falta empresa\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"Necesito que me agende una reunión con lucas\",\n      \"Entrada_registro\": \"Necesito que me agende una reunión con lucas\",\n      \"Entrada_empresa\": \"\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"\",\n      \"Nombre\": \"\",\n      \"Confianza_empresa\": 0\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"evento\",\n      \"Confianza_registro\": 0.65\n    }\n  ],\n  \"Agente\": [\n    {\n      \"Titulo\": \"Reunión con Lucas\",\n      \"Descripcion\": \"\"\n    }\n  ]\n}"
-        }
-      }
     ]
   },
   "repo_name": "Sistema_de_gestion_central_notion_n8n",
@@ -613,6 +606,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-10-15T23:16:23.768Z",
-  "versionId": "2af17ada-3545-4897-ae5e-4743523df59f"
+  "updatedAt": "2025-10-16T14:35:41.395Z",
+  "versionId": "9a549c91-fc0e-4a0c-af15-3e882d2b8d37"
 }
