@@ -490,6 +490,13 @@
             "type": "main",
             "index": 0
           }
+        ],
+        [
+          {
+            "node": "Call 'Notion_Recordatorios'",
+            "type": "main",
+            "index": 0
+          }
         ]
       ]
     },
@@ -647,8 +654,8 @@
       ]
     }
   },
-  "createdAt": "2025-10-06T20:29:15.834Z",
-  "id": "0VvaCW7B5SRC0mDW",
+  "createdAt": "2025-10-16T00:48:10.684Z",
+  "id": "ROWQgowpSMhz6lKC",
   "isArchived": false,
   "meta": {
     "templateCredsSetupCompleted": true
@@ -742,7 +749,7 @@
       "type": "n8n-nodes-base.switch",
       "typeVersion": 3.2,
       "position": [
-        -640,
+        -624,
         -320
       ],
       "id": "832078b3-d730-4d17-8e6b-b8d20b6fe540",
@@ -765,7 +772,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        176,
+        192,
         -304
       ],
       "id": "f5f5a361-a301-4f51-9aaa-d077d0c097d1",
@@ -818,7 +825,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        -864,
+        -848,
         -288
       ],
       "id": "271d5a63-6190-474d-a38b-13b119f9ca3e",
@@ -833,7 +840,7 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.8,
       "position": [
-        -32,
+        -16,
         -144
       ],
       "id": "bcd967d7-ce3b-42ec-b22f-9899b1b4596f",
@@ -862,7 +869,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        176,
+        192,
         -144
       ],
       "id": "59702405-525b-4a35-9bc9-39b1f02d0e1d",
@@ -885,7 +892,7 @@
       "type": "@n8n/n8n-nodes-langchain.openAi",
       "typeVersion": 1.8,
       "position": [
-        -32,
+        -16,
         -464
       ],
       "id": "72a2bcbb-9fcb-4418-9660-5aa0f46a7b30",
@@ -914,7 +921,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        176,
+        192,
         -464
       ],
       "id": "3ed604a7-9828-4dc5-873d-44a59c191c69",
@@ -937,7 +944,7 @@
       "type": "n8n-nodes-base.set",
       "typeVersion": 3.4,
       "position": [
-        384,
+        400,
         -304
       ],
       "id": "a94cd9de-7dfe-4c33-9ee2-c3a6bcb02b22",
@@ -1125,7 +1132,7 @@
       },
       "type": "n8n-nodes-base.stickyNote",
       "position": [
-        -1456,
+        -1440,
         -512
       ],
       "typeVersion": 1,
@@ -1851,7 +1858,7 @@
       "type": "n8n-nodes-base.whatsAppTrigger",
       "typeVersion": 1,
       "position": [
-        -1424,
+        -1408,
         -272
       ],
       "id": "000951e5-08c3-41a0-900c-d262f8adebe1",
@@ -1951,7 +1958,7 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        -416,
+        -400,
         -144
       ],
       "id": "be203524-d3e4-497a-9335-52f44c6eece9",
@@ -1974,7 +1981,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -208,
+        -192,
         -144
       ],
       "id": "65e4aad7-b0a8-48cc-8906-f247af4c22fc",
@@ -1995,7 +2002,7 @@
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
       "position": [
-        -416,
+        -400,
         -464
       ],
       "id": "6c895c61-2fa4-497e-a12d-45f163beae53",
@@ -2018,7 +2025,7 @@
       "type": "n8n-nodes-base.httpRequest",
       "typeVersion": 4.2,
       "position": [
-        -224,
+        -208,
         -464
       ],
       "id": "db795dd7-e059-4234-80b6-57ba47f25aad",
@@ -2090,7 +2097,7 @@
           "conditions": [
             {
               "id": "95d411cc-dbb1-4f23-be4e-c94b4e9f5274",
-              "leftValue": "={{ $json.messages[0].text.body }}",
+              "leftValue": "={{ $json.messages[0].button.text }}",
               "rightValue": "=.",
               "operator": {
                 "type": "string",
@@ -2105,7 +2112,7 @@
       "type": "n8n-nodes-base.if",
       "typeVersion": 2.2,
       "position": [
-        -1088,
+        -1072,
         -272
       ],
       "id": "558198b4-553b-4ab3-b5f5-abcfe782ed89",
@@ -2122,7 +2129,7 @@
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        -1248,
+        -1232,
         -272
       ],
       "id": "d8058f12-63a3-4fc5-8fcd-5ff274ee4988",
@@ -2591,6 +2598,30 @@
       ],
       "id": "2e33a27d-70af-4b5d-b541-7a849a98c78d",
       "name": "Structured Output Parser"
+    },
+    {
+      "parameters": {
+        "workflowId": {
+          "__rl": true,
+          "value": "TJ93FGKAbl35UnfS",
+          "mode": "list",
+          "cachedResultUrl": "/workflow/TJ93FGKAbl35UnfS",
+          "cachedResultName": "Notion_Recordatorios"
+        },
+        "workflowInputs": {
+          "mappingMode": "defineBelow",
+          "value": {}
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.executeWorkflow",
+      "typeVersion": 1.3,
+      "position": [
+        -848,
+        -112
+      ],
+      "id": "a734345e-7c9b-4dd8-b1e6-9aa01ec7464b",
+      "name": "Call 'Notion_Recordatorios'"
     }
   ],
   "pinData": {
@@ -2634,10 +2665,10 @@
   },
   "shared": [
     {
-      "createdAt": "2025-10-06T20:29:15.834Z",
-      "updatedAt": "2025-10-06T20:29:15.834Z",
+      "createdAt": "2025-10-16T00:48:10.684Z",
+      "updatedAt": "2025-10-16T00:48:10.684Z",
       "role": "workflow:owner",
-      "workflowId": "0VvaCW7B5SRC0mDW",
+      "workflowId": "ROWQgowpSMhz6lKC",
       "projectId": "5ieVStNAHt1Bb6Tr"
     }
   ],
@@ -2650,7 +2681,7 @@
       "name": "Notion"
     }
   ],
-  "triggerCount": 1,
-  "updatedAt": "2025-10-15T23:16:16.336Z",
-  "versionId": "3c58945d-1a24-45cb-8de6-bd666126af38"
+  "triggerCount": 0,
+  "updatedAt": "2025-10-16T00:48:10.684Z",
+  "versionId": "7b08532b-1bb9-4131-b385-72d72e485328"
 }
