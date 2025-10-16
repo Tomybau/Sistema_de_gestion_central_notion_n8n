@@ -60,11 +60,12 @@
       "main": [
         [
           {
-            "node": "Redis",
+            "node": "confianza_formato?",
             "type": "main",
             "index": 0
           }
-        ]
+        ],
+        []
       ]
     },
     "obtener_redis": {
@@ -84,6 +85,46 @@
           {
             "node": "obtener_empresas",
             "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "confianza_formato?": {
+      "main": [
+        [
+          {
+            "node": "Redis",
+            "type": "main",
+            "index": 0
+          }
+        ],
+        [
+          {
+            "node": "Redis1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Redis1": {
+      "main": [
+        [
+          {
+            "node": "Send message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Structured Output Parser": {
+      "ai_outputParser": [
+        [
+          {
+            "node": "empresa",
+            "type": "ai_outputParser",
             "index": 0
           }
         ]
@@ -111,8 +152,8 @@
       "type": "@n8n/n8n-nodes-langchain.lmChatOpenAi",
       "typeVersion": 1.2,
       "position": [
-        416,
-        336
+        400,
+        304
       ],
       "id": "58cc47f5-bc8a-4675-85a3-e0f94e1b8916",
       "name": "OpenAI Chat Model1",
@@ -127,10 +168,11 @@
       "parameters": {
         "promptType": "define",
         "text": "={{ $('When Executed by Another Workflow').first().json.input }}",
+        "hasOutputParser": true,
         "messages": {
           "messageValues": [
             {
-              "message": "=Eres un asistente que identifica a qué empresa pertenece un texto.\nAnaliza si no existen palabras \"raras\" o con fonetica similares a las empresas disponibles que puedan ser el nombre de la empresa pero mal traducido, en especial si el mensaje llego por audio.\nLuego en el JSON final coloca la confianza que tienes del 1 como totalemnte seguro a 0 como nada seguro de que el nombre de la empresa sea el correcto\n\nEmpresas disponibles:\n{{ $json.lista_nombres }}\n\nAnaliza el texto y devuelve *SOLO el siguiente JSON*\n\n{\n  \"empresa\": \"<nombre o ''>\",\n  \"confianza\": <valor 0-1>\n}\n"
+              "message": "=Eres un asistente que identifica a qué empresa pertenece un texto.\nAnaliza si no existen palabras \"raras\" o con fonetica similares a las empresas disponibles que puedan ser el nombre de la empresa pero mal traducido, en especial si el mensaje llego por audio.\nLuego en el JSON final coloca la confianza que tienes del 1 como totalemnte seguro a 0 como nada seguro de que el nombre de la empresa sea el correcto\nAntes de devolverlo, analiza que el JSON que devuelvas sea valido\n\nEmpresas disponibles:\n{{ $json.lista_nombres }}\n\nAnaliza el texto y devuelve *SOLO el siguiente JSON*\n\n\n{\n  \"empresa\": \"<nombre o ''>\",\n  \"confianza\": <valor 0-1>\n}\n"
             }
           ]
         },
@@ -148,7 +190,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// --- 1) Parseamos el JSON del campo \"text\" si existe ---\nlet data;\nif (typeof $json.text === 'string' && $json.text.trim()) {\n  try {\n    data = JSON.parse($json.text);\n  } catch (e) {\n    data = JSON.parse($json.text.replace(/'/g, '\"'));\n  }\n} else {\n  data = {\n    empresa: $json.empresa ?? \"\",\n    confianza: $json.confianza ?? null,\n  };\n}\n\n// --- 2) Buscamos la lista de empresas desde \"limpiar_empresas\" ---\nlet empresas = [];\n\n// Soporte para distintos formatos\nconst inputEmpresas = $('limpiar_empresas').first().json;\n\n// Asegura compatibilidad con estructura moderna\nif (Array.isArray(inputEmpresas[\"empresas/proyectos\"])) {\n  empresas = inputEmpresas[\"empresas/proyectos\"];\n} else if (Array.isArray(inputEmpresas.empresas)) {\n  empresas = inputEmpresas.empresas;\n} else if (Array.isArray(inputEmpresas.lista_nombres)) {\n  // Si solo existe la lista de nombres (sin IDs)\n  empresas = inputEmpresas.lista_nombres.map(n => ({ nombre: n }));\n}\n\nif (!empresas || empresas.length === 0) {\n  data.match = false;\n  data.mensaje = \"No se encontró lista de empresas en el input\";\n  data._debug = { estructura_json: $json };\n  return data;\n}\n\n// --- 3) Función para limpiar texto ---\nfunction normalizar(s) {\n  return (s ?? \"\")\n    .toString()\n    .normalize('NFKC')\n    .replace(/[\\u200B-\\u200D\\uFEFF]/g, '')\n    .replace(/\\u00A0/g, ' ')\n    .trim()\n    .toLowerCase()\n    .normalize('NFD')\n    .replace(/[\\u0300-\\u036f]/g, '')\n    .replace(/\\s+/g, ' ');\n}\n\nconst empresaInputRaw = data.empresa ?? \"\";\nconst empresaInputNorm = normalizar(empresaInputRaw);\n\n// --- 4) Comparamos con la lista ---\nlet empresaMatch = null;\nlet idMatch = null;\n\nfor (const e of empresas) {\n  const nombreNorm = normalizar(e.nombre ?? e); // soporta objetos o strings\n  if (nombreNorm === empresaInputNorm) {\n    empresaMatch = e.nombre ?? e;\n    idMatch = e.id ?? null;\n    break;\n  }\n}\n\n// --- 5) Resultado final ---\nif (empresaMatch) {\n  data.empresa_normalizada = empresaMatch;\n  data.empresa_id = idMatch;\n  data.match = true;\n  data.mensaje = \"Empresa válida\";\n} else {\n  data.empresa_normalizada = empresaInputRaw;\n  data.empresa_id = null;\n  data.match = false;\n  data.mensaje = \"Empresa incorrecta\";\n}\n\nreturn data;\n"
+        "jsCode": "// --- 1) Datos de entrada ---\nconst data = {\n  empresa: $input.first().json.output.empresa ?? \"\",\n  confianza: $input.first().json.output.confianza ?? null,\n};\n\n// --- 2) Cargamos la lista desde el nodo \"limpiar_empresas\" ---\nlet empresas = [];\nconst inputEmpresas = $('limpiar_empresas').first().json;\n\n// Soporte para distintos formatos\nif (Array.isArray(inputEmpresas[\"empresas/proyectos\"])) {\n  empresas = inputEmpresas[\"empresas/proyectos\"];\n} else if (Array.isArray(inputEmpresas.empresas)) {\n  empresas = inputEmpresas.empresas;\n} else if (Array.isArray(inputEmpresas.lista_nombres)) {\n  empresas = inputEmpresas.lista_nombres.map(n => ({ nombre: n }));\n}\n\n// Si no hay lista de empresas, devolvemos error claro\nif (!empresas || empresas.length === 0) {\n  return {\n    ...data,\n    match: false,\n    mensaje: \"No se encontró lista de empresas en el input\",\n    _debug: { estructura_json: inputEmpresas },\n  };\n}\n\n// --- 3) Normalización de texto ---\nfunction normalizar(s) {\n  return (s ?? \"\")\n    .toString()\n    .normalize('NFKC')\n    .replace(/[\\u200B-\\u200D\\uFEFF]/g, '')\n    .replace(/\\u00A0/g, ' ')\n    .trim()\n    .toLowerCase()\n    .normalize('NFD')\n    .replace(/[\\u0300-\\u036f]/g, '')\n    .replace(/\\s+/g, ' ');\n}\n\nconst empresaInputRaw = data.empresa;\nconst empresaInputNorm = normalizar(empresaInputRaw);\n\n// --- 4) Búsqueda exacta ---\nlet empresaMatch = null;\nlet idMatch = null;\n\nfor (const e of empresas) {\n  const nombreNorm = normalizar(e.nombre ?? e);\n  if (nombreNorm === empresaInputNorm) {\n    empresaMatch = e.nombre ?? e;\n    idMatch = e.id ?? null;\n    break;\n  }\n}\n\n// --- 5) Resultado final ---\nif (empresaMatch) {\n  data.empresa_normalizada = empresaMatch;\n  data.empresa_id = idMatch;\n  data.match = true;\n  data.mensaje = \"Empresa válida\";\n} else {\n  data.empresa_normalizada = empresaInputRaw;\n  data.empresa_id = null;\n  data.match = false;\n  data.mensaje = \"Empresa incorrecta\";\n}\n\nreturn data;\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -157,13 +199,14 @@
         144
       ],
       "id": "8d644e59-be56-40ea-ba91-c14f1ca3d9f3",
-      "name": "JSON_empresa"
+      "name": "JSON_empresa",
+      "retryOnFail": false
     },
     {
       "parameters": {
         "content": "## Determinar empresa\n",
         "height": 464,
-        "width": 1632,
+        "width": 1744,
         "color": 4
       },
       "type": "n8n-nodes-base.stickyNote",
@@ -226,6 +269,9 @@
             },
             {
               "name": "input"
+            },
+            {
+              "name": "wa_id"
             }
           ]
         }
@@ -243,15 +289,15 @@
       "parameters": {
         "operation": "set",
         "key": "={{ $('When Executed by Another Workflow').first().json.chat_id }}",
-        "value": "={\n  \"Estado\": \"Consultando empresa\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('When Executed by Another Workflow').first().json.input }}\",\n      \"Entrada_registro\": \"{{ $('redis_a_JSON').first().json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('redis_a_JSON').first().json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $json.empresa_id }}\",\n      \"Nombre\": \"{{ $json.empresa_normalizada }}\",\n      \"Confianza_empresa\": {{ $json.confianza }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('redis_a_JSON').first().json.Registro[0].Nombre }}\",\n      \"Confianza_registro\": {{ $('redis_a_JSON').first().json.Registro[0].Confianza_registro }}\n    }\n  ],\n  \"Agente\": [\n    {\n      \"Titulo\": \"{{ $('redis_a_JSON').first().json.Agente[0].Titulo }}\",\n      \"Descripción\": \"{{ $('redis_a_JSON').first().json.Agente[0].Descripción }}\",\n      \"Fecha\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha }}\",\n      \"Departamento\":\"{{ $('redis_a_JSON').first().json.Agente[0].Departamento }}\",\n      \"Prioridad\":\"{{ $('redis_a_JSON').first().json.Agente[0].Prioridad }}\"\n    }\n  ]\n}\n",
+        "value": "={\n  \"Estado\": \"empresa_obtenida\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('When Executed by Another Workflow').first().json.input }}\",\n      \"Entrada_registro\": \"{{ $('redis_a_JSON').first().json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('redis_a_JSON').first().json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $json.empresa_id }}\",\n      \"Nombre\": \"{{ $json.empresa_normalizada }}\",\n      \"Confianza_empresa\": {{ $json.confianza }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('redis_a_JSON').first().json.Registro[0].Nombre }}\",\n      \"Confianza_registro\": {{ $('redis_a_JSON').first().json.Registro[0].Confianza_registro }}\n    }\n  ],\n  \"Agente\": [\n    {\n      \"Titulo\": \"{{ $('redis_a_JSON').first().json.Agente[0].Titulo }}\",\n      \"Descripción\": \"{{ $('redis_a_JSON').first().json.Agente[0].Descripción }}\",\n      \"Fecha\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha }}\",\n      \"Fecha_inicio\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha_inicio }}\",\n      \"Fecha_fin\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha_fin }}\",\n      \"Departamento\":\"{{ $('redis_a_JSON').first().json.Agente[0].Departamento || \"\"}}\",\n      \"Prioridad\":\"{{ $('redis_a_JSON').first().json.Agente[0].Prioridad || \"\"}}\"\n    }\n  ]\n}\n",
         "expire": true,
         "ttl": 600
       },
       "type": "n8n-nodes-base.redis",
       "typeVersion": 1,
       "position": [
-        896,
-        144
+        1216,
+        80
       ],
       "id": "2c1a01df-68e8-42b9-9ea3-4f7bea668272",
       "name": "Redis",
@@ -296,14 +342,108 @@
       ],
       "id": "5ccb9c20-82b0-4d8c-897c-9c8d5548aac3",
       "name": "redis_a_JSON"
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "9f49d5ab-164b-4c59-b6d3-51282c500ea9",
+              "leftValue": "={{ $json.confianza }}",
+              "rightValue": 0.7,
+              "operator": {
+                "type": "number",
+                "operation": "gt"
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        912,
+        144
+      ],
+      "id": "f9c19864-85d2-430d-aa79-ae387ee4ea31",
+      "name": "confianza_formato?"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "810851532108753",
+        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').first().json.wa_id }}",
+        "textBody": "=Podrías facilitarme a qué empresa pertenece esto?",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1392,
+        272
+      ],
+      "id": "073a2d44-e675-425d-806f-7164231400b7",
+      "name": "Send message",
+      "webhookId": "cfe8ca01-d40b-457d-ae0e-2cdbd406d588",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "set",
+        "key": "={{ $('When Executed by Another Workflow').first().json.chat_id }}",
+        "value": "={\n  \"Estado\": \"falta_empresa\",\n  \"Entradas\": [\n    {\n      \"Entrada_inicial\": \"{{ $('When Executed by Another Workflow').first().json.input }}\",\n      \"Entrada_registro\": \"{{ $('redis_a_JSON').first().json.Entradas[0].Entrada_registro }}\",\n      \"Entrada_empresa\": \"{{ $('redis_a_JSON').first().json.Entradas[0].Entrada_empresa }}\"\n    }\n  ],\n  \"Empresa\": [\n    {\n      \"id\": \"{{ $json.empresa_id }}\",\n      \"Nombre\": \"{{ $json.empresa_normalizada }}\",\n      \"Confianza_empresa\": {{ $json.confianza }}\n    }\n  ],\n  \"Registro\": [\n    {\n      \"Nombre\": \"{{ $('redis_a_JSON').first().json.Registro[0].Nombre }}\",\n      \"Confianza_registro\": {{ $('redis_a_JSON').first().json.Registro[0].Confianza_registro }}\n    }\n  ],\n  \"Agente\": [\n    {\n      \"Titulo\": \"{{ $('redis_a_JSON').first().json.Agente[0].Titulo }}\",\n      \"Descripción\": \"{{ $('redis_a_JSON').first().json.Agente[0].Descripción }}\",\n      \"Fecha\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha }}\",\n      \"Fecha_inicio\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha_inicio }}\",\n      \"Fecha_fin\": \"{{ $('redis_a_JSON').first().json.Agente[0].Fecha_fin }}\",\n      \"Departamento\":\"{{ $('redis_a_JSON').first().json.Agente[0].Departamento }}\",\n      \"Prioridad\":\"{{ $('redis_a_JSON').first().json.Agente[0].Prioridad }}\"\n    }\n  ]\n}\n",
+        "expire": true,
+        "ttl": 600
+      },
+      "type": "n8n-nodes-base.redis",
+      "typeVersion": 1,
+      "position": [
+        1216,
+        272
+      ],
+      "id": "e7e17b21-2cee-4cae-8c88-6fc4b8fcdd90",
+      "name": "Redis1",
+      "credentials": {
+        "redis": {
+          "id": "FCP6hT01xV80XIPs",
+          "name": "Redis account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsonSchemaExample": "{\n  \"empresa\": \"nombre de la empresa\",\n  \"confianza\": 0.7\n}"
+      },
+      "type": "@n8n/n8n-nodes-langchain.outputParserStructured",
+      "typeVersion": 1.3,
+      "position": [
+        592,
+        304
+      ],
+      "id": "b19c67ec-8d32-42a3-a593-ee57f42cfc77",
+      "name": "Structured Output Parser"
     }
   ],
   "pinData": {
     "When Executed by Another Workflow": [
       {
         "json": {
-          "chat_id": "wamid.HBgNNTQ5MzU0NDY0MTY4MxUCABIYIEFDMDU0OTlDMDRDNzVFOUEzMUQ1QzI2N0NBOEIyMzgwAA==",
-          "input": "Quiero registrar una nueva idea para Walking que sea referido snhace renueva camlapñaa como la de Weagles"
+          "chat_id": "810851532108753",
+          "input": "Necesito que me agende una reunión con lucas",
+          "wa_id": "5493544641683"
         }
       }
     ]
@@ -333,6 +473,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-10-15T23:16:36.006Z",
-  "versionId": "5e14a936-43a1-4530-816a-b4f8a110d41f"
+  "updatedAt": "2025-10-16T14:38:28.657Z",
+  "versionId": "d321d2d1-eab0-4570-a7be-1053006af2e3"
 }
