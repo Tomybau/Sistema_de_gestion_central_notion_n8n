@@ -1,5 +1,5 @@
 {
-  "active": false,
+  "active": true,
   "connections": {
     "divisor": {
       "main": [
@@ -654,8 +654,8 @@
       ]
     }
   },
-  "createdAt": "2025-10-16T00:48:10.684Z",
-  "id": "ROWQgowpSMhz6lKC",
+  "createdAt": "2025-10-06T20:29:15.834Z",
+  "id": "0VvaCW7B5SRC0mDW",
   "isArchived": false,
   "meta": {
     "templateCredsSetupCompleted": true
@@ -1200,13 +1200,14 @@
           "value": "sXHiDmFQ3LXFv5si",
           "mode": "list",
           "cachedResultUrl": "/workflow/sXHiDmFQ3LXFv5si",
-          "cachedResultName": "Determinar_formato"
+          "cachedResultName": "Sub-Determinar_formato"
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
           "value": {
             "chat_id": "={{ $('filtrado_datos').item.json.messege.chat_id }}",
-            "input": "={{ $('chat_imput').item.json.content }}"
+            "input": "={{ $('chat_imput').item.json.content }}",
+            "wa_id": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -1223,6 +1224,16 @@
             {
               "id": "input",
               "displayName": "input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "wa_id",
+              "displayName": "wa_id",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -1613,7 +1624,8 @@
           "mappingMode": "defineBelow",
           "value": {
             "chat_id": "={{ $('filtrado_datos').item.json.messege.chat_id }}",
-            "input": "={{ $('chat_imput').item.json.content }}"
+            "input": "={{ $('chat_imput').item.json.content }}",
+            "wa_id": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}"
           },
           "matchingColumns": [],
           "schema": [
@@ -1630,6 +1642,16 @@
             {
               "id": "input",
               "displayName": "input",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            },
+            {
+              "id": "wa_id",
+              "displayName": "wa_id",
               "required": false,
               "defaultMatch": false,
               "display": true,
@@ -2041,7 +2063,7 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "810851532108753",
-        "recipientPhoneNumber": "+5493544641683",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}",
         "textBody": "=¿Me facilitarías a que empresa pertenece esta {{ $('Switch1').item.json.Registro[0].Nombre }}?",
         "additionalFields": {}
       },
@@ -2065,7 +2087,7 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "810851532108753",
-        "recipientPhoneNumber": "+5493544641683",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}",
         "textBody": "=Listo! La nueva {{ $('Switch1').item.json.Registro[0].Nombre }} de {{ $('Switch1').item.json.Empresa[0].Nombre }}, \"{{ $('Switch1').item.json.Agente[0].Titulo }}\" fue creada exitosamente!\n",
         "additionalFields": {}
       },
@@ -2472,7 +2494,7 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "810851532108753",
-        "recipientPhoneNumber": "+5493544641683",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}",
         "textBody": "=Listo! La nueva {{ $('Switch1').item.json.Registro[0].Nombre }} de {{ $('Switch1').item.json.Empresa[0].Nombre }}, \"{{ $('Switch1').item.json.Agente[0].Titulo }}\" fue creada exitosamente para el {{ $('Switch1').item.json.Agente[0].Fecha }}!",
         "additionalFields": {}
       },
@@ -2496,7 +2518,7 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "810851532108753",
-        "recipientPhoneNumber": "+5493544641683",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}",
         "textBody": "=¿Me facilitarías para que fecha quieres que lo registremos este evento?",
         "additionalFields": {}
       },
@@ -2543,7 +2565,7 @@
       "parameters": {
         "operation": "send",
         "phoneNumberId": "810851532108753",
-        "recipientPhoneNumber": "+5493544641683",
+        "recipientPhoneNumber": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}",
         "textBody": "=¿Me facilitarías para que empresa y con que fecha quieres que lo registremos este evento?",
         "additionalFields": {}
       },
@@ -2610,7 +2632,26 @@
         },
         "workflowInputs": {
           "mappingMode": "defineBelow",
-          "value": {}
+          "value": {
+            "wa_id": "={{ $('WhatsApp Trigger').item.json.contacts[0].wa_id }}"
+          },
+          "matchingColumns": [
+            "id"
+          ],
+          "schema": [
+            {
+              "id": "wa_id",
+              "displayName": "wa_id",
+              "required": false,
+              "defaultMatch": false,
+              "display": true,
+              "canBeUsedToMatch": true,
+              "type": "string",
+              "removed": false
+            }
+          ],
+          "attemptToConvertTypes": false,
+          "convertFieldsToString": true
         },
         "options": {}
       },
@@ -2665,10 +2706,10 @@
   },
   "shared": [
     {
-      "createdAt": "2025-10-16T00:48:10.684Z",
-      "updatedAt": "2025-10-16T00:48:10.684Z",
+      "createdAt": "2025-10-06T20:29:15.834Z",
+      "updatedAt": "2025-10-06T20:29:15.834Z",
       "role": "workflow:owner",
-      "workflowId": "ROWQgowpSMhz6lKC",
+      "workflowId": "0VvaCW7B5SRC0mDW",
       "projectId": "5ieVStNAHt1Bb6Tr"
     }
   ],
@@ -2681,7 +2722,7 @@
       "name": "Notion"
     }
   ],
-  "triggerCount": 0,
-  "updatedAt": "2025-10-16T00:48:10.684Z",
-  "versionId": "7b08532b-1bb9-4131-b385-72d72e485328"
+  "triggerCount": 1,
+  "updatedAt": "2025-10-16T00:54:55.694Z",
+  "versionId": "d113fbfb-5a55-47db-9a2f-60f47f80b7e5"
 }
