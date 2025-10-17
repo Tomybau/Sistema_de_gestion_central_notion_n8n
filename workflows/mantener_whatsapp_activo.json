@@ -76,7 +76,7 @@
       "parameters": {
         "phoneNumberId": "810851532108753",
         "recipientPhoneNumber": "+5493544641683",
-        "template": "seleccion_clinica|es"
+        "template": "activar_cuenta|es_AR"
       },
       "type": "n8n-nodes-base.whatsApp",
       "typeVersion": 1,
@@ -181,6 +181,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-10-15T23:16:52.296Z",
-  "versionId": "68cc09e7-1c07-4e87-aad4-4fbcbc95fa08"
+  "updatedAt": "2025-10-17T21:34:24.856Z",
+  "versionId": "89375ef4-a923-4621-b49e-75ad14873da4"
 }
