@@ -286,7 +286,7 @@
         "messages": {
           "messageValues": [
             {
-              "message": "=Eres un asistente que ayuda a registrar eventos o reuniones.\nEl usuario puede hablar de forma espontánea o incluir detalles mezclados.\nDebes identificar fecha, hora, tema del evento.\n\n## Casos para las fechas:\n- Si no se especifica nada, deja vacio *JAMAS PUEDES INVENTAR DATOS NO DADOS POR EL USUARIO*\n- Si solo se especifica una fecha para el evento completa \"fecha\" y deja \"fecha_inicio\" y \"fecha_fin\" vacios\n- Si especifica el horario pero no la finalizacion pon en \"fecha_inicio\" la fecha con la hora y en hora fin coloca media hora mas de la fecha y hora de inicio\n- Si especifica fecha y hora de inicio y fin completa en su respectivos lugares\nFecha y hora actual para que te guies: {{ $now }}\n\n\n\nTu objetivo es dejarlo todo listo para crear el evento en Notion.\nDevuelve solo un JSON con esta estructura:\n\n{\n  \"titulo\": \"nombre o motivo del evento\",\n  \"descripcion\": \"contexto o información adicional (opcional)\",\n  \"fecha\": \"YYYY-MM-DD o vacío\",\n  \"fecha_inicio\": \"YYYY-MM-DD HH:MM o vacío\",\n  \"fecha_fin\": \"YYYY-MM-DD HH:MM o vacío\",\n}\n"
+              "message": "=Eres un asistente que ayuda a registrar eventos o reuniones.\nEl usuario puede hablar de forma espontánea o incluir detalles mezclados.\nDebes identificar fecha, hora, tema del evento.\n\n## Casos para las fechas:\n- Si no se especifica nada, deja vacio *JAMAS PUEDES INVENTAR DATOS NO DADOS POR EL USUARIO*\n- Si el ususario hace referencia a mañana, el lunes, etc infiere la fecha basada en la fecha actual\n- Si solo se especifica una fecha para el evento completa \"fecha\" y deja \"fecha_inicio\" y \"fecha_fin\" vacios\n- Si especifica el horario pero no la finalizacion pon en \"fecha_inicio\" la fecha con la hora y en hora fin coloca media hora mas de la fecha y hora de inicio\n- Si especifica fecha y hora de inicio y fin completa en su respectivos lugares\nFecha y hora actual para que te guies: {{ $now }}\n\n\n\nTu objetivo es dejarlo todo listo para crear el evento en Notion.\nDevuelve solo un JSON con esta estructura:\n\n{\n  \"titulo\": \"nombre o motivo del evento\",\n  \"descripcion\": \"contexto o información adicional (opcional)\",\n  \"fecha\": \"YYYY-MM-DD o vacío\",\n  \"fecha_inicio\": \"YYYY-MM-DD HH:MM o vacío\",\n  \"fecha_fin\": \"YYYY-MM-DD HH:MM o vacío\",\n}\n"
             }
           ]
         },
@@ -507,7 +507,7 @@
     },
     {
       "parameters": {
-        "jsCode": "// Tomamos la salida del nodo anterior (Redis3)\nconst rawData = $json[\"data\"];\n\n// Validamos si existe y si es un string JSON\nlet parsedData;\ntry {\n  parsedData = rawData ? JSON.parse(rawData) : {};\n} catch (error) {\n  parsedData = { error: \"No se pudo parsear el JSON desde Redis3\", raw: rawData };\n}\n\n// Devolvemos el objeto final como JSON\nreturn [{ json: parsedData }];\n\n"
+        "jsCode": "// --- 1️⃣ Tomamos la salida del nodo anterior (Redis3)\nconst rawData = $json[\"data\"];\n\n// --- 2️⃣ Validamos y limpiamos\nlet parsedData;\n\nif (!rawData) {\n  return [{ json: { error: \"No hay datos en Redis3\" } }];\n}\n\ntry {\n  // Caso común: Redis devuelve string con escape\n  let cleaned = rawData\n    .replace(/\\n|\\r|\\t/g, ' ')        // elimina saltos, tabs y retornos\n    .replace(/\\\\n|\\\\r|\\\\t/g, ' ')     // elimina versiones escapadas\n    .replace(/“|”/g, '\"')             // cambia comillas curvas\n    .replace(/'/g, '\"')               // reemplaza comillas simples por dobles\n    .replace(/\\s+/g, ' ')             // compacta espacios\n    .trim();\n\n  // Intento 1: parse directo\n  try {\n    parsedData = JSON.parse(cleaned);\n  } catch (e1) {\n    // Intento 2: algunas veces hay JSON doblemente serializado\n    parsedData = JSON.parse(JSON.parse(cleaned));\n  }\n\n} catch (error) {\n  parsedData = {\n    error: \"No se pudo parsear el JSON desde Redis3\",\n    detalle: error.message,\n    raw: rawData,\n  };\n}\n\n// --- 3️⃣ Devolvemos el resultado final\nreturn [{ json: parsedData }];\n"
       },
       "type": "n8n-nodes-base.code",
       "typeVersion": 2,
@@ -606,6 +606,6 @@
     }
   ],
   "triggerCount": 0,
-  "updatedAt": "2025-10-16T14:35:41.395Z",
-  "versionId": "9a549c91-fc0e-4a0c-af15-3e882d2b8d37"
+  "updatedAt": "2025-10-16T15:49:38.138Z",
+  "versionId": "d4a8f3e8-7178-48cc-a4b9-7d335f2d6a73"
 }
