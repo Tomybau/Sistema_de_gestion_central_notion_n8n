@@ -1,0 +1,1357 @@
+{
+  "active": false,
+  "connections": {
+    "Get many events": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many events1": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "limpieza_datos1": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Merge1": {
+      "main": [
+        [
+          {
+            "node": "armado_informe1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "obtener_estado_boton1": {
+      "main": [
+        [
+          {
+            "node": "boton_encendido?",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many events2": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Get many events3": {
+      "main": [
+        [
+          {
+            "node": "Merge",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "obtener_tareas": {
+      "main": [
+        [
+          {
+            "node": "limpieza_datos1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "obtener_eventos": {
+      "main": [
+        [
+          {
+            "node": "obtener_empresa",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "limpieza_datos3": {
+      "main": [
+        [
+          {
+            "node": "Merge1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "obtener_empresa": {
+      "main": [
+        [
+          {
+            "node": "limpieza_datos3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "boton_encendido?": {
+      "main": [
+        [
+          {
+            "node": "obtener_tareas",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "Get many events",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "obtener_eventos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "armado_informe1": {
+      "main": [
+        [
+          {
+            "node": "informe_recordatorios",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "When Executed by Another Workflow": {
+      "main": [
+        [
+          {
+            "node": "obtener_estado_boton",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "obtener_tareas_limite": {
+      "main": [
+        [
+          {
+            "node": "limpieza_datos",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "limpieza_datos": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "obtener_tareas_recordatorio": {
+      "main": [
+        [
+          {
+            "node": "limpieza_datos2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "limpieza_datos2": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Get many events4": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Code in JavaScript1": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "Get many events5": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 1
+          }
+        ]
+      ]
+    },
+    "Merge2": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Merge3": {
+      "main": [
+        [
+          {
+            "node": "armado_informe",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "obtener_estado_boton": {
+      "main": [
+        [
+          {
+            "node": "boton_encendido?1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get many events6": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 2
+          }
+        ]
+      ]
+    },
+    "Get many events7": {
+      "main": [
+        [
+          {
+            "node": "Merge2",
+            "type": "main",
+            "index": 3
+          }
+        ]
+      ]
+    },
+    "obtener_eventos1": {
+      "main": [
+        [
+          {
+            "node": "obtener_empresa1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "limpieza_datos4": {
+      "main": [
+        [
+          {
+            "node": "Merge3",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "obtener_empresa1": {
+      "main": [
+        [
+          {
+            "node": "limpieza_datos4",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "boton_encendido?1": {
+      "main": [
+        [
+          {
+            "node": "Get many events4",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "obtener_eventos1",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "obtener_tareas_limite",
+            "type": "main",
+            "index": 0
+          },
+          {
+            "node": "obtener_tareas_recordatorio",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "armado_informe": {
+      "main": [
+        [
+          {
+            "node": "informe_recordatorios1",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "createdAt": "2025-10-06T21:50:58.230Z",
+  "id": "TJ93FGKAbl35UnfS",
+  "isArchived": false,
+  "meta": {
+    "templateCredsSetupCompleted": true
+  },
+  "name": "Notion_Sub-Recordatorios",
+  "nodes": [
+    {
+      "parameters": {
+        "content": "## Enviar recordatorio del dia\n\n",
+        "height": 1120,
+        "width": 1936,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -576,
+        400
+      ],
+      "typeVersion": 1,
+      "id": "ec290d6a-092b-45e3-a7be-96c6db723501",
+      "name": "Sticky Note1"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = {};\n\nfor (const el of items) {\n  const props = el.json.properties || {};\n\n  const empresa =\n    props[\"Empresa\"]?.formula?.string || \"Sin empresa\";\n\n  const departamento =\n    props[\"Departamento\"]?.rollup?.array?.[0]?.select?.name || \"Sin departamento\";\n\n  const nombre =\n    props[\"Nombre\"]?.title?.[0]?.plain_text || \"Sin nombre\";\n\n  const fecha =\n    props[\"Fecha \"]?.date?.start || null;\n\n  const prioridad =\n    props[\"Prioridad\"]?.select?.name || null;\n\n  const estado =\n    props[\"Estado\"]?.status?.name || \"Sin estado\";\n\n  if (!output[empresa]) output[empresa] = {};\n  if (!output[empresa][departamento]) output[empresa][departamento] = [];\n\n  output[empresa][departamento].push({\n    nombre,\n    fecha,\n    prioridad,\n    estado,\n  });\n}\n\n// Retornar el objeto agrupado\nreturn [{ json: output }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        624
+      ],
+      "id": "9478912f-fd10-467a-a968-ac5268f0900d",
+      "name": "limpieza_datos1"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "baudraccotomasc@gmail.com",
+          "mode": "list",
+          "cachedResultName": "baudraccotomasc@gmail.com"
+        },
+        "returnAll": true,
+        "timeMax": "={{ $now.plus({ day: 1 }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        144,
+        800
+      ],
+      "id": "fe5cd065-c817-4ffa-a4e4-b04f14d1124a",
+      "name": "Get many events",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "P9kfAJfCe2fsEhnp",
+          "name": "Notion_n8n_baudraccotomasc"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = [];\n\nfor (const el of items) {\n  const event = el.json;\n\n  const nombre = event.summary || \"Sin título\";\n  const inicio = event.start?.dateTime || event.start?.date || null;\n  const fin = event.end?.dateTime || event.end?.date || null;\n  const link = event.htmlLink || null;\n  const estado = event.status || \"desconocido\";\n  const creador = event.creator?.email || \"sin email\";\n\n  output.push({\n    nombre,\n    inicio,\n    fin,\n    estado,\n    creador,\n    link,\n  });\n}\n\nreturn output.map(e => ({ json: e }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        528,
+        912
+      ],
+      "id": "2b100c55-76f9-4a07-be28-9bf974325ede",
+      "name": "Code in JavaScript"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "tomybau11@gmail.com",
+          "mode": "list",
+          "cachedResultName": "tomybau11@gmail.com"
+        },
+        "returnAll": true,
+        "timeMax": "={{ $now.plus({ day: 1 }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        144,
+        976
+      ],
+      "id": "449f89cc-bc57-4d95-9dd2-d92ac361f42f",
+      "name": "Get many events1",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "q3hTsqwdNi6LT6mw",
+          "name": "Google Calendar tomybau"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        352,
+        912
+      ],
+      "id": "4e183d25-ac77-4671-85cc-c84930bbde2d",
+      "name": "Merge"
+    },
+    {
+      "parameters": {
+        "numberInputs": 3
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        784,
+        688
+      ],
+      "id": "4e4f5c3d-2b6a-4d99-813d-d0deb8ceade1",
+      "name": "Merge1"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "get",
+        "pageId": {
+          "__rl": true,
+          "value": "=https://www.notion.so/Resumen-actividades-dia-286272c9f6ae8071945cd0e3130a1800",
+          "mode": "url"
+        }
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        -288,
+        816
+      ],
+      "id": "01e635d7-a9b7-42f5-a155-1dd508617ef5",
+      "name": "obtener_estado_boton1",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "tomybau11@gmail.com",
+          "mode": "list",
+          "cachedResultName": "tomybau11@gmail.com"
+        },
+        "returnAll": true,
+        "timeMax": "={{ $now.plus({ day: 1 }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        144,
+        1152
+      ],
+      "id": "7255838a-cf8a-4069-a26c-7e4c95698888",
+      "name": "Get many events2",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "q3hTsqwdNi6LT6mw",
+          "name": "Google Calendar tomybau"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "tomybau11@gmail.com",
+          "mode": "list",
+          "cachedResultName": "tomybau11@gmail.com"
+        },
+        "returnAll": true,
+        "timeMax": "={{ $now.plus({ day: 1 }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        144,
+        1328
+      ],
+      "id": "6fa52e23-a09d-469c-89c0-3a81ac200473",
+      "name": "Get many events3",
+      "credentials": {
+        "googleCalendarOAuth2Api": {
+          "id": "q3hTsqwdNi6LT6mw",
+          "name": "Google Calendar tomybau"
+        }
+      },
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "27d272c9-f6ae-80a8-9e6b-d6d1c3c625a4",
+          "mode": "list",
+          "cachedResultName": "Tareas",
+          "cachedResultUrl": "https://www.notion.so/27d272c9f6ae80a89e6bd6d1c3c625a4"
+        },
+        "returnAll": true,
+        "simple": false,
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Estado|status",
+              "condition": "does_not_equal",
+              "statusValue": "Listo"
+            },
+            {
+              "key": "Recordatorio|date",
+              "condition": "on_or_after",
+              "date": "={{ $now }}"
+            },
+            {
+              "key": "Recordatorio|date",
+              "condition": "on_or_before",
+              "date": "={{ DateTime.now().plus({ days: 1 }).toISO() }}"
+            },
+            {
+              "key": "Fecha Límite|date",
+              "condition": "on_or_after",
+              "date": "={{ $now }}"
+            },
+            {
+              "key": "Fecha Límite|date",
+              "condition": "=",
+              "date": "={{ DateTime.now().plus({ days: 1 }).toISO() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        144,
+        624
+      ],
+      "id": "46e3bf3f-408f-4d3b-95c5-795f32797b48",
+      "name": "obtener_tareas",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "284272c9-f6ae-8094-a1b7-e7d7a5c5f275",
+          "mode": "list",
+          "cachedResultName": "Eventos",
+          "cachedResultUrl": "https://www.notion.so/284272c9f6ae8094a1b7e7d7a5c5f275"
+        },
+        "returnAll": true,
+        "simple": false,
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Fecha del Evento|date",
+              "condition": "on_or_after",
+              "date": "={{ $now.format(\"yyyy-MM-dd\") }}"
+            },
+            {
+              "key": "Fecha del Evento|date",
+              "condition": "before",
+              "date": "={{ $now.plus({days:1}).format(\"yyyy-MM-dd\") }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        144,
+        448
+      ],
+      "id": "ac7490f9-1a79-4725-8610-f90453dc72db",
+      "name": "obtener_eventos",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 🧩 Combina datos de los proyectos y eventos\n\n// Input[0] = proyectos\n// Input[1] = eventos\n\nconst proyectosData = $items(\"obtener_empresa\", 0, 0).map(x => x.json);\nconst eventosData = $items(\"obtener_eventos\", 0, 0).map(x => x.json);\n\nconst proyectos = {};\nconst output = {};\n\n// 🕓 Fecha de hoy (local)\nconst hoy = new Date().toLocaleDateString(\"en-CA\"); // YYYY-MM-DD\n\n// 1️⃣ Crear un diccionario de proyectos { id: nombre }\nfor (const p of proyectosData) {\n  const id = p.id || null;\n  const nombre = p.name || p[\"property_empresa_proyecto\"] || \"Sin nombre\";\n  if (id) proyectos[id] = nombre;\n}\n\n// 2️⃣ Cruzar eventos con el nombre de la empresa/proyecto\nfor (const ev of eventosData) {\n  const props = ev.properties || {};\n\n  const idProyecto = props[\"Empresas/Proyectos\"]?.relation?.[0]?.id || null;\n  const empresa = proyectos[idProyecto] || \"Sin empresa\";\n\n  const nombre = props[\"Nombre\"]?.title?.[0]?.plain_text || \"Sin nombre\";\n  const fechaInicio = props[\"Fecha del Evento\"]?.date?.start || null;\n  const fechaFin = props[\"Fecha del Evento\"]?.date?.end || null;\n\n  // Convertimos a formato fecha local (solo YYYY-MM-DD)\n  const fechaInicioLocal = fechaInicio ? new Date(fechaInicio).toLocaleDateString(\"en-CA\") : null;\n  const fechaFinLocal = fechaFin ? new Date(fechaFin).toLocaleDateString(\"en-CA\") : fechaInicioLocal;\n\n  // 🎯 Incluir solo si el evento coincide con el día actual\n  const esHoy =\n    (fechaInicioLocal === hoy) || // empieza hoy\n    (fechaFinLocal === hoy) ||    // termina hoy\n    (fechaInicioLocal < hoy && fechaFinLocal > hoy); // cubre hoy\n\n  if (esHoy) {\n    if (!output[empresa]) output[empresa] = [];\n    output[empresa].push({\n      nombre,\n      inicio: fechaInicio,\n      fin: fechaFin,\n    });\n  }\n}\n\nreturn [{ json: output }];\n\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        448
+      ],
+      "id": "6ff4c5e4-3447-4bd2-b712-cc0db78eae33",
+      "name": "limpieza_datos3"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "28a272c9-f6ae-8045-8bc7-f5e9c9fdc749",
+          "mode": "list",
+          "cachedResultName": "Empresas/Proyectos",
+          "cachedResultUrl": "https://www.notion.so/28a272c9f6ae80458bc7f5e9c9fdc749"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        352,
+        448
+      ],
+      "id": "1958b2d1-314f-4d90-bde0-e26f67d9a86f",
+      "name": "obtener_empresa",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c3b49dcb-9d56-4c6c-9d89-2eab4973e2ce",
+              "leftValue": "={{ $json.property_activar }}",
+              "rightValue": "={{ $json.property_activar }}",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -96,
+        816
+      ],
+      "id": "4b775dc1-c142-4bdf-80bf-e13c1da494d9",
+      "name": "boton_encendido?"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "810851532108753",
+        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').item.json.wa_id }}",
+        "textBody": "={{ $json.mensaje }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1152,
+        704
+      ],
+      "id": "6ecf6859-7a31-4125-afd6-554a82936d06",
+      "name": "informe_recordatorios",
+      "webhookId": "2bc43fd9-469b-466c-bd43-fe09fe49f702",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 🧹 Inicializamos estructuras\nconst notionData = [];\nconst calendarData = [];\n\n// 🔍 Clasificamos los items que vienen del Merge\nfor (const item of items) {\n  const json = item.json;\n\n  // Detectamos Notion por estructura (sin campos de tiempo)\n  if (!json.inicio && !json.fin) {\n    notionData.push(json);\n  } \n  // Detectamos Calendar por campos tipo \"inicio\" o \"fin\"\n  else if (json.inicio || json.fin) {\n    calendarData.push(json);\n  }\n}\n\n// 🧠 Función recursiva para recorrer estructuras anidadas de Notion\n// (para separar entre EVENTOS y TAREAS según jerarquía)\nfunction clasificarNotion(obj, nivel = 0, contexto = { eventos: [], tareas: {} }) {\n  for (const key in obj) {\n    const valor = obj[key];\n\n    if (Array.isArray(valor)) {\n      // Es una lista de tareas u objetos simples\n      for (const tarea of valor) {\n        const nombre = tarea.nombre || '(Sin nombre)';\n        const estado = tarea.estado ? ` | ${tarea.estado}` : '';\n        const prioridad = tarea.prioridad ? ` [${tarea.prioridad}]` : '';\n        const horaInicio = tarea.inicio ? tarea.inicio.split('T')[1]?.slice(0,5) : '';\n        const horaFin = tarea.fin ? tarea.fin.split('T')[1]?.slice(0,5) : '';\n        const horario = horaInicio || horaFin ? ` (${horaInicio}-${horaFin})` : '';\n\n        // Si estamos en el nivel raíz, lo tomamos como evento\n        if (nivel === 0) {\n          contexto.eventos.push(`- ${nombre}${horario}`);\n        } else {\n          // Si estamos dentro de una empresa\n          const empresaActual = contexto.empresa || 'Sin empresa';\n          if (!contexto.tareas[empresaActual]) contexto.tareas[empresaActual] = [];\n          contexto.tareas[empresaActual].push(`- ${nombre}${estado}${prioridad}`);\n        }\n      }\n    } else if (typeof valor === 'object' && valor !== null) {\n      // Quitamos @ si existe en nombre\n      const nombreLimpio = key.startsWith('@') ? key.slice(1) : key;\n      const subContexto = { ...contexto, empresa: nombreLimpio };\n      clasificarNotion(valor, nivel + 1, subContexto);\n    }\n  }\n\n  return contexto;\n}\n\n// 🧩 Armamos el mensaje base\nlet mensaje = `*Resumen de actividades de hoy*\\n\\n`;\n\n// --- 📘 Clasificamos todos los datos de Notion ---\nlet eventos = [];\nlet tareasPorEmpresa = {};\n\nfor (const bloque of notionData) {\n  const resultado = clasificarNotion(bloque);\n  eventos.push(...resultado.eventos);\n  for (const [empresa, tareas] of Object.entries(resultado.tareas)) {\n    if (!tareasPorEmpresa[empresa]) tareasPorEmpresa[empresa] = [];\n    tareasPorEmpresa[empresa].push(...tareas);\n  }\n}\n\n// --- 🗓️ Agregamos eventos del calendario ---\nfor (const evento of calendarData) {\n  const horaInicio = evento.inicio?.split(\"T\")[1]?.slice(0,5) || \"\";\n  const horaFin = evento.fin?.split(\"T\")[1]?.slice(0,5) || \"\";\n  eventos.push(`- ${evento.nombre} (${horaInicio}-${horaFin})`);\n}\n\n// --- 🧾 Armamos el texto final ---\nif (eventos.length > 0) {\n  mensaje += `*Eventos de hoy:*\\n`;\n  mensaje += eventos.join(\"\\n\") + \"\\n\\n\";\n}\n\nif (Object.keys(tareasPorEmpresa).length > 0) {\n  mensaje += `*Tareas de hoy:*\\n`;\n  for (const [empresa, tareas] of Object.entries(tareasPorEmpresa)) {\n    mensaje += `🏢 *${empresa}*\\n`;\n    mensaje += tareas.map(t => `   ${t}`).join(\"\\n\") + \"\\n\\n\";\n  }\n}\n\n// Devolvemos el mensaje como salida única\nreturn [{ json: { mensaje } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        960,
+        704
+      ],
+      "id": "74ec7b7b-0dd3-4c69-99f5-39e8127f96fe",
+      "name": "armado_informe1"
+    },
+    {
+      "parameters": {
+        "workflowInputs": {
+          "values": [
+            {
+              "name": "wa_id"
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.executeWorkflowTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -480,
+        2192
+      ],
+      "id": "060564c2-4dc9-4c49-b83c-587237c0159d",
+      "name": "When Executed by Another Workflow"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "27d272c9-f6ae-80a8-9e6b-d6d1c3c625a4",
+          "mode": "list",
+          "cachedResultName": "Tareas",
+          "cachedResultUrl": "https://www.notion.so/27d272c9f6ae80a89e6bd6d1c3c625a4"
+        },
+        "returnAll": true,
+        "simple": false,
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Estado|status",
+              "condition": "does_not_equal",
+              "statusValue": "Listo"
+            },
+            {
+              "key": "Recordatorio|date",
+              "condition": "on_or_after",
+              "date": "={{ $now }}"
+            },
+            {
+              "key": "Recordatorio|date",
+              "condition": "on_or_before",
+              "date": "={{ DateTime.now().plus({ days: 1 }).toISO() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        160,
+        1984
+      ],
+      "id": "d4af9c42-bc30-4f0d-8296-ad44860fe723",
+      "name": "obtener_tareas_limite",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = {};\n\nfor (const el of items) {\n  const props = el.json.properties || {};\n\n  const empresa =\n    props[\"Empresa\"]?.formula?.string || \"Sin empresa\";\n\n  const departamento =\n    props[\"Departamento\"]?.rollup?.array?.[0]?.select?.name || \"Sin departamento\";\n\n  const nombre =\n    props[\"Nombre\"]?.title?.[0]?.plain_text || \"Sin nombre\";\n\n  const fecha =\n    props[\"Fecha \"]?.date?.start || null;\n\n  const prioridad =\n    props[\"Prioridad\"]?.select?.name || null;\n\n  const estado =\n    props[\"Estado\"]?.status?.name || \"Sin estado\";\n\n  if (!output[empresa]) output[empresa] = {};\n  if (!output[empresa][departamento]) output[empresa][departamento] = [];\n\n  output[empresa][departamento].push({\n    nombre,\n    fecha,\n    prioridad,\n    estado,\n  });\n}\n\n// Retornar el objeto agrupado\nreturn [{ json: output }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        1984
+      ],
+      "id": "f2c016a3-5f57-49e1-b66c-d701615d9e74",
+      "name": "limpieza_datos"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "27d272c9-f6ae-80a8-9e6b-d6d1c3c625a4",
+          "mode": "list",
+          "cachedResultName": "Tareas",
+          "cachedResultUrl": "https://www.notion.so/27d272c9f6ae80a89e6bd6d1c3c625a4"
+        },
+        "returnAll": true,
+        "simple": false,
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Estado|status",
+              "condition": "does_not_equal",
+              "statusValue": "Listo"
+            },
+            {
+              "key": "Fecha Límite|date",
+              "condition": "on_or_after",
+              "date": "={{ $now }}"
+            },
+            {
+              "key": "Fecha Límite|date",
+              "condition": "on_or_before",
+              "date": "={{ DateTime.now().plus({ days: 1 }).toISO() }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        160,
+        1808
+      ],
+      "id": "00bfe3b7-555f-4407-ab02-d4a29df8834d",
+      "name": "obtener_tareas_recordatorio",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      },
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "content": "## Enviar recordatorio del dia\n\n",
+        "height": 1120,
+        "width": 1936,
+        "color": 5
+      },
+      "type": "n8n-nodes-base.stickyNote",
+      "position": [
+        -560,
+        1584
+      ],
+      "typeVersion": 1,
+      "id": "65139685-30a1-460a-8ff7-99df384710a0",
+      "name": "Sticky Note"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = {};\n\nfor (const el of items) {\n  const props = el.json.properties || {};\n\n  const empresa =\n    props[\"Empresa\"]?.formula?.string || \"Sin empresa\";\n\n  const departamento =\n    props[\"Departamento\"]?.rollup?.array?.[0]?.select?.name || \"Sin departamento\";\n\n  const nombre =\n    props[\"Nombre\"]?.title?.[0]?.plain_text || \"Sin nombre\";\n\n  const fecha =\n    props[\"Fecha \"]?.date?.start || null;\n\n  const prioridad =\n    props[\"Prioridad\"]?.select?.name || null;\n\n  const estado =\n    props[\"Estado\"]?.status?.name || \"Sin estado\";\n\n  if (!output[empresa]) output[empresa] = {};\n  if (!output[empresa][departamento]) output[empresa][departamento] = [];\n\n  output[empresa][departamento].push({\n    nombre,\n    fecha,\n    prioridad,\n    estado,\n  });\n}\n\n// Retornar el objeto agrupado\nreturn [{ json: output }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        1808
+      ],
+      "id": "35498522-710b-42ce-b81e-d29326b1300d",
+      "name": "limpieza_datos2"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "baudraccotomasc@gmail.com",
+          "mode": "list",
+          "cachedResultName": "baudraccotomasc@gmail.com"
+        },
+        "returnAll": true,
+        "timeMax": "={{ $now.plus({ day: 1 }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        160,
+        2176
+      ],
+      "id": "f28fb271-6b9f-4d50-bc81-a1e97fbe8bf5",
+      "name": "Get many events4",
+      "disabled": true,
+      "onError": "continueRegularOutput"
+    },
+    {
+      "parameters": {
+        "jsCode": "const output = [];\n\nfor (const el of items) {\n  const event = el.json;\n\n  const nombre = event.summary || \"Sin título\";\n  const inicio = event.start?.dateTime || event.start?.date || null;\n  const fin = event.end?.dateTime || event.end?.date || null;\n  const link = event.htmlLink || null;\n  const estado = event.status || \"desconocido\";\n  const creador = event.creator?.email || \"sin email\";\n\n  output.push({\n    nombre,\n    inicio,\n    fin,\n    estado,\n    creador,\n    link,\n  });\n}\n\nreturn output.map(e => ({ json: e }));\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        544,
+        2288
+      ],
+      "id": "4229ce2d-eb0d-41f8-935f-45e21ac74565",
+      "name": "Code in JavaScript1"
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "tomybau11@gmail.com",
+          "mode": "list",
+          "cachedResultName": "tomybau11@gmail.com"
+        },
+        "returnAll": true,
+        "timeMax": "={{ $now.plus({ day: 1 }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        160,
+        2352
+      ],
+      "id": "b4bf65d9-4673-4d1e-833a-316a22877684",
+      "name": "Get many events5",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        368,
+        2288
+      ],
+      "id": "e10692ba-3c0d-407c-b7bc-e80e7c1ba1f5",
+      "name": "Merge2"
+    },
+    {
+      "parameters": {
+        "numberInputs": 4
+      },
+      "type": "n8n-nodes-base.merge",
+      "typeVersion": 3.2,
+      "position": [
+        800,
+        1872
+      ],
+      "id": "55a17097-83fb-4a82-ae96-451883547cb1",
+      "name": "Merge3"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "get",
+        "pageId": {
+          "__rl": true,
+          "value": "=https://www.notion.so/Resumen-actividades-dia-286272c9f6ae8071945cd0e3130a1800",
+          "mode": "url"
+        }
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        -272,
+        2192
+      ],
+      "id": "17c5f6a9-b143-4f95-b62a-0c73cfc27880",
+      "name": "obtener_estado_boton",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "tomybau11@gmail.com",
+          "mode": "list",
+          "cachedResultName": "tomybau11@gmail.com"
+        },
+        "returnAll": true,
+        "timeMax": "={{ $now.plus({ day: 1 }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        160,
+        2528
+      ],
+      "id": "d4c584c6-0c3f-43be-8894-70f525db34b3",
+      "name": "Get many events6",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "operation": "getAll",
+        "calendar": {
+          "__rl": true,
+          "value": "tomybau11@gmail.com",
+          "mode": "list",
+          "cachedResultName": "tomybau11@gmail.com"
+        },
+        "returnAll": true,
+        "timeMax": "={{ $now.plus({ day: 1 }) }}",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleCalendar",
+      "typeVersion": 1.3,
+      "position": [
+        160,
+        2704
+      ],
+      "id": "2d86ada5-61b0-486c-ac81-cbb5d40e2580",
+      "name": "Get many events7",
+      "disabled": true
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "284272c9-f6ae-8094-a1b7-e7d7a5c5f275",
+          "mode": "list",
+          "cachedResultName": "Eventos",
+          "cachedResultUrl": "https://www.notion.so/284272c9f6ae8094a1b7e7d7a5c5f275"
+        },
+        "returnAll": true,
+        "simple": false,
+        "filterType": "manual",
+        "matchType": "allFilters",
+        "filters": {
+          "conditions": [
+            {
+              "key": "Fecha del Evento|date",
+              "condition": "on_or_after",
+              "date": "={{ $now.format(\"yyyy-MM-dd\") }}"
+            },
+            {
+              "key": "Fecha del Evento|date",
+              "condition": "before",
+              "date": "={{ $now.plus({days:1}).format(\"yyyy-MM-dd\") }}"
+            }
+          ]
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        160,
+        1632
+      ],
+      "id": "0708d45b-0dca-4475-b1d7-bb818770aef4",
+      "name": "obtener_eventos1",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 🧩 Combina datos de los proyectos y eventos\n\n// Input[0] = proyectos\n// Input[1] = eventos\n\nconst proyectosData = $items(\"obtener_empresa1\", 0, 0).map(x => x.json);\nconst eventosData = $items(\"obtener_eventos1\", 0, 0).map(x => x.json);\n\nconst proyectos = {};\nconst output = {};\n\n// 🕓 Fecha de hoy (local)\nconst hoy = new Date().toLocaleDateString(\"en-CA\"); // YYYY-MM-DD\n\n// 1️⃣ Crear un diccionario de proyectos { id: nombre }\nfor (const p of proyectosData) {\n  const id = p.id || null;\n  const nombre = p.name || p[\"property_empresa_proyecto\"] || \"Sin nombre\";\n  if (id) proyectos[id] = nombre;\n}\n\n// 2️⃣ Cruzar eventos con el nombre de la empresa/proyecto\nfor (const ev of eventosData) {\n  const props = ev.properties || {};\n\n  const idProyecto = props[\"Empresas/Proyectos\"]?.relation?.[0]?.id || null;\n  const empresa = proyectos[idProyecto] || \"Sin empresa\";\n\n  const nombre = props[\"Nombre\"]?.title?.[0]?.plain_text || \"Sin nombre\";\n  const fechaInicio = props[\"Fecha del Evento\"]?.date?.start || null;\n  const fechaFin = props[\"Fecha del Evento\"]?.date?.end || null;\n\n  // Convertimos a formato fecha local (solo YYYY-MM-DD)\n  const fechaInicioLocal = fechaInicio ? new Date(fechaInicio).toLocaleDateString(\"en-CA\") : null;\n  const fechaFinLocal = fechaFin ? new Date(fechaFin).toLocaleDateString(\"en-CA\") : fechaInicioLocal;\n\n  // 🎯 Incluir solo si el evento coincide con el día actual\n  const esHoy =\n    (fechaInicioLocal === hoy) || // empieza hoy\n    (fechaFinLocal === hoy) ||    // termina hoy\n    (fechaInicioLocal < hoy && fechaFinLocal > hoy); // cubre hoy\n\n  if (esHoy) {\n    if (!output[empresa]) output[empresa] = [];\n    output[empresa].push({\n      nombre,\n      inicio: fechaInicio,\n      fin: fechaFin,\n    });\n  }\n}\n\nreturn [{ json: output }];\n\n\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        560,
+        1632
+      ],
+      "id": "2e76bcd4-abeb-4734-a203-6f6058199178",
+      "name": "limpieza_datos4"
+    },
+    {
+      "parameters": {
+        "resource": "databasePage",
+        "operation": "getAll",
+        "databaseId": {
+          "__rl": true,
+          "value": "28a272c9-f6ae-8045-8bc7-f5e9c9fdc749",
+          "mode": "list",
+          "cachedResultName": "Empresas/Proyectos",
+          "cachedResultUrl": "https://www.notion.so/28a272c9f6ae80458bc7f5e9c9fdc749"
+        },
+        "returnAll": true,
+        "options": {}
+      },
+      "type": "n8n-nodes-base.notion",
+      "typeVersion": 2.2,
+      "position": [
+        352,
+        1632
+      ],
+      "id": "3c2f3b75-4999-453c-83f0-343d294f0d07",
+      "name": "obtener_empresa1",
+      "credentials": {
+        "notionApi": {
+          "id": "fyQ0RqcmHkhWZLsD",
+          "name": "Notion account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "conditions": {
+          "options": {
+            "caseSensitive": true,
+            "leftValue": "",
+            "typeValidation": "strict",
+            "version": 2
+          },
+          "conditions": [
+            {
+              "id": "c3b49dcb-9d56-4c6c-9d89-2eab4973e2ce",
+              "leftValue": "={{ $json.property_activar }}",
+              "rightValue": "={{ $json.property_activar }}",
+              "operator": {
+                "type": "boolean",
+                "operation": "true",
+                "singleValue": true
+              }
+            }
+          ],
+          "combinator": "and"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2.2,
+      "position": [
+        -80,
+        2192
+      ],
+      "id": "4c0a8c50-2551-4e36-9f2b-0571807f1301",
+      "name": "boton_encendido?1"
+    },
+    {
+      "parameters": {
+        "operation": "send",
+        "phoneNumberId": "810851532108753",
+        "recipientPhoneNumber": "={{ $('When Executed by Another Workflow').first().json.wa_id }}",
+        "textBody": "={{ $json.mensaje }}",
+        "additionalFields": {}
+      },
+      "type": "n8n-nodes-base.whatsApp",
+      "typeVersion": 1,
+      "position": [
+        1168,
+        1888
+      ],
+      "id": "f8b7d3ed-e59e-43b8-a2fa-c51ac5a997f7",
+      "name": "informe_recordatorios1",
+      "webhookId": "2bc43fd9-469b-466c-bd43-fe09fe49f702",
+      "credentials": {
+        "whatsAppApi": {
+          "id": "pV4vxi8821Z8UsSL",
+          "name": "WhatsApp account"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "// 🧹 Inicializamos estructuras\nconst notionData = [];\nconst calendarData = [];\n\n// 🔍 Clasificamos los items que vienen del Merge\nfor (const item of items) {\n  const json = item.json;\n\n  // Detectamos Notion por estructura (sin campos de tiempo)\n  if (!json.inicio && !json.fin) {\n    notionData.push(json);\n  } \n  // Detectamos Calendar por campos tipo \"inicio\" o \"fin\"\n  else if (json.inicio || json.fin) {\n    calendarData.push(json);\n  }\n}\n\n// 🧠 Función recursiva para recorrer estructuras anidadas de Notion\n// (para separar entre EVENTOS y TAREAS según jerarquía)\nfunction clasificarNotion(obj, nivel = 0, contexto = { eventos: [], tareasRecordatorio: {}, tareasLimite: {} }) {\n  for (const key in obj) {\n    const valor = obj[key];\n\n    if (Array.isArray(valor)) {\n      // Es una lista de tareas u objetos simples\n      for (const tarea of valor) {\n        const nombre = tarea.nombre || '(Sin nombre)';\n        const estado = tarea.estado ? ` | ${tarea.estado}` : '';\n        const prioridad = tarea.prioridad ? ` [${tarea.prioridad}]` : '';\n        const origen = tarea.origen || null;\n\n        const horaInicio = tarea.inicio ? tarea.inicio.split('T')[1]?.slice(0,5) : '';\n        const horaFin = tarea.fin ? tarea.fin.split('T')[1]?.slice(0,5) : '';\n        const horario = horaInicio || horaFin ? ` (${horaInicio}-${horaFin})` : '';\n\n        // Si estamos en el nivel raíz, lo tomamos como evento\n        if (nivel === 0) {\n          contexto.eventos.push(`- ${nombre}${horario}`);\n        } else {\n          const empresaActual = contexto.empresa || 'Sin empresa';\n          const textoTarea = `- ${nombre}${estado}${prioridad}`;\n\n          if (origen === \"recordatorio\") {\n            if (!contexto.tareasRecordatorio[empresaActual]) contexto.tareasRecordatorio[empresaActual] = [];\n            contexto.tareasRecordatorio[empresaActual].push(textoTarea);\n          } else if (origen === \"limite\") {\n            if (!contexto.tareasLimite[empresaActual]) contexto.tareasLimite[empresaActual] = [];\n            contexto.tareasLimite[empresaActual].push(textoTarea);\n          } else {\n            // Si no tiene origen, lo tratamos como genérico\n            if (!contexto.tareasRecordatorio[empresaActual]) contexto.tareasRecordatorio[empresaActual] = [];\n            contexto.tareasRecordatorio[empresaActual].push(textoTarea);\n          }\n        }\n      }\n    } else if (typeof valor === 'object' && valor !== null) {\n      const nombreLimpio = key.startsWith('@') ? key.slice(1) : key;\n      const subContexto = { ...contexto, empresa: nombreLimpio };\n      clasificarNotion(valor, nivel + 1, subContexto);\n    }\n  }\n\n  return contexto;\n}\n\n// 🧩 Armamos el mensaje base\nlet mensaje = `*Resumen de actividades de hoy*\\n\\n`;\n\n// --- 📘 Clasificamos todos los datos de Notion ---\nlet eventos = [];\nlet tareasRecordatorio = {};\nlet tareasLimite = {};\n\nfor (const bloque of notionData) {\n  const resultado = clasificarNotion(bloque);\n  eventos.push(...resultado.eventos);\n\n  for (const [empresa, tareas] of Object.entries(resultado.tareasRecordatorio)) {\n    if (!tareasRecordatorio[empresa]) tareasRecordatorio[empresa] = [];\n    tareasRecordatorio[empresa].push(...tareas);\n  }\n\n  for (const [empresa, tareas] of Object.entries(resultado.tareasLimite)) {\n    if (!tareasLimite[empresa]) tareasLimite[empresa] = [];\n    tareasLimite[empresa].push(...tareas);\n  }\n}\n\n// --- 🗓️ Agregamos eventos del calendario ---\nfor (const evento of calendarData) {\n  const horaInicio = evento.inicio?.split(\"T\")[1]?.slice(0,5) || \"\";\n  const horaFin = evento.fin?.split(\"T\")[1]?.slice(0,5) || \"\";\n  eventos.push(`- ${evento.nombre} (${horaInicio}-${horaFin})`);\n}\n\n// --- 🧾 Armamos el texto final ---\nif (eventos.length > 0) {\n  mensaje += `*Eventos de hoy:*\\n`;\n  mensaje += eventos.join(\"\\n\") + \"\\n\\n\";\n}\n\n// --- 🟡 Recordatorios de tareas ---\nif (Object.keys(tareasRecordatorio).length > 0) {\n  mensaje += `*Recordatorios de tareas para hoy:*\\n`;\n  for (const [empresa, tareas] of Object.entries(tareasRecordatorio)) {\n    mensaje += `🏢 *${empresa}*\\n`;\n    mensaje += tareas.map(t => `   ${t}`).join(\"\\n\") + \"\\n\\n\";\n  }\n}\n\n// --- 🔴 Tareas con vencimiento ---\nif (Object.keys(tareasLimite).length > 0) {\n  mensaje += `*Tareas con vencimiento para hoy:*\\n`;\n  for (const [empresa, tareas] of Object.entries(tareasLimite)) {\n    mensaje += `🏢 *${empresa}*\\n`;\n    mensaje += tareas.map(t => `   ${t}`).join(\"\\n\") + \"\\n\\n\";\n  }\n}\n\n// Devolvemos el mensaje como salida única\nreturn [{ json: { mensaje } }];\n"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        976,
+        1888
+      ],
+      "id": "c91a520e-cf8e-4a96-be30-44ab23e65a19",
+      "name": "armado_informe"
+    }
+  ],
+  "pinData": {
+    "When Executed by Another Workflow": [
+      {
+        "json": {
+          "wa_id": "5493544641683"
+        }
+      }
+    ]
+  },
+  "repo_name": "Sistema_de_gestion_central_notion_n8n",
+  "repo_owner": "Tomybau",
+  "repo_path": "workflows/",
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "shared": [
+    {
+      "createdAt": "2025-10-06T21:50:58.230Z",
+      "updatedAt": "2025-10-06T21:50:58.230Z",
+      "role": "workflow:owner",
+      "workflowId": "TJ93FGKAbl35UnfS",
+      "projectId": "5ieVStNAHt1Bb6Tr"
+    }
+  ],
+  "staticData": {
+    "node:Schedule Trigger": {
+      "recurrenceRules": []
+    },
+    "node:Schedule Trigger1": {
+      "recurrenceRules": []
+    },
+    "node:Schedule Trigger2": {
+      "recurrenceRules": []
+    }
+  },
+  "tags": [
+    {
+      "createdAt": "2025-10-15T23:16:12.194Z",
+      "updatedAt": "2025-10-15T23:16:12.194Z",
+      "id": "NHMeAPMIT8hmJz47",
+      "name": "Notion"
+    }
+  ],
+  "triggerCount": 2,
+  "updatedAt": "2025-10-27T23:14:38.670Z",
+  "versionId": "dc5f37fd-9dcf-4f09-9dd0-53533b17df65"
+}
