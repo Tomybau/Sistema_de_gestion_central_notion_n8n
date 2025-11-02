@@ -1,5 +1,5 @@
 {
-  "active": true,
+  "active": false,
   "connections": {
     "obtener_tareas_vencidas": {
       "main": [
@@ -129,9 +129,9 @@
         "filters": {
           "conditions": [
             {
-              "key": "Fecha |date",
+              "key": "Fecha Límite|date",
               "condition": "before",
-              "date": "={{ $('Schedule Trigger').item.json.timestamp }}"
+              "date": "={{ $('Schedule Trigger1').item.json.timestamp }}"
             },
             {
               "key": "Estado|status",
@@ -139,7 +139,7 @@
               "statusValue": "Listo"
             },
             {
-              "key": "Fecha |date",
+              "key": "Fecha Límite|date",
               "condition": "after",
               "date": "={{ \n  new Date(Date.now() - 24 * 60 * 60 * 1000).toISOString() \n}}"
             }
@@ -417,6 +417,6 @@
     }
   ],
   "triggerCount": 1,
-  "updatedAt": "2025-10-15T23:16:47.126Z",
-  "versionId": "533e5980-48d3-43d3-ab27-372409f15ecf"
+  "updatedAt": "2025-11-02T14:23:57.048Z",
+  "versionId": "d77adcbe-01ed-4449-a491-0a14cf047f73"
 }
